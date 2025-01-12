@@ -9,6 +9,7 @@ import SearchVaran from './component/SearchVaran';
 import RegisterVaran from './component/RegisterVaran';
 import Varan from './component/Varan';
 import UpdateVaran from './component/UpdateVaran';
+import Contact from './Contact';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/' element={<Login />}></Route>           
        <Route path='/signup' element={<Signup />}></Route>            
        <Route path='/home' element={<Home />}></Route>   
+       <Route path='/contact' element={<Contact />}></Route>   
        <Route path='/registerVaran' element={<RegisterVaran />}></Route>             
        <Route path='/addVaran' element={<AddVaran />}></Route>        
        <Route path='/varan' element={<Varan />}></Route>        

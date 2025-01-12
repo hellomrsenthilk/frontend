@@ -395,7 +395,7 @@ const UpdateVaran = () => {
                                 </label><br/>
                                 <select name="ddlSex" id="ddlSex" class="dd_NoWidth" 
                                      className="font-size-13"  onChange={handleChange}>
-                                    <option value="">பாலினம்</option>
+                                    <option value="0-0">{formVarans.sex}</option>
                                     <option value="male">Male - ஆண்</option>
                                     <option value="female">Female - பெண்</option>
                                 </select>
@@ -420,7 +420,7 @@ const UpdateVaran = () => {
                                 </label> <br/>
                                 <select name="ddlTimeOfBirth" id="ddlTimeOfBirth" class="dd_NoWidth"
                                    onChange={handleChange}>
-                                <option value="Hr" selected="selected">HR</option>
+                                <option value="0" selected="selected">{formVarans.timeOfBirth}</option>
                                 <option value="0">00</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -438,7 +438,7 @@ const UpdateVaran = () => {
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                         <select name="ddlMinOfBirth" id="ddlMinOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                            <option value="MIN" selected>MIN</option>
+                            <option value="0" selected>{formVarans.minOfBirth}</option>
                             <option value="0">00</option>
                             <option value="1">01</option>
                             <option value="2">02</option>
@@ -503,7 +503,7 @@ const UpdateVaran = () => {
                         &nbsp;&nbsp;
                         <select name="ddlSecOfBirth" id="ddlSecOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                        <option value="0" selected>காலம்</option>
+                        <option value="0" selected>{formVarans.secOfBirth}</option>
                         <option value="AM">AM - காலை</option>
                         <option value="PM">PM - மாலை</option>
                     </select>
@@ -547,7 +547,7 @@ const UpdateVaran = () => {
                                 id="ddlMotherTongue"
                                 onChange={handleChange}
                                 >
-                                    <option value="0-0" selected="selected">தாய் மொழி</option>
+                                    <option value="0-0" selected="selected">{formVarans.motherTongueStr}</option>
                                     <option value="1-Tamil" >Tamil - தமிழ்</option>
                                     <option value="2-Telugu" >Telugu - தெலுங்கு</option>
                                     <option value="3-Malayalam" >Malayalam - மலையாளம்</option>
@@ -560,7 +560,7 @@ const UpdateVaran = () => {
                                 <b>Marital status </b><br/>
                                 <select name="ddlMaritialStatus" id="ddlMaritialStatus" class="dd_NoWidth" 
                                      onChange={handleChange}>
-                                    <option value="0-0" selected="selected">திருமண தகுதி நிலை</option>
+                                    <option value="0-0" selected="selected">{formVarans.maritialStatusStr}</option>
                                     <option value="1-Unmarried">Unmarried - திருமணம் ஆகாதவர்</option>
                                     <option value="2-Married">Married - திருமணம் ஆணவர்</option>
                                     <option value="3-Widow">Widow - விதவை</option>
@@ -581,6 +581,7 @@ const UpdateVaran = () => {
                                 className="form-input"
                                 name="txtFatherName"
                                 id="txtFatherName"
+                                value={formVarans.fatherName}
                                 onChange={handleChange}
                                 />
                             </div>
@@ -589,7 +590,7 @@ const UpdateVaran = () => {
                                 <b>Father's Alive</b> <br/>
                                 <select name="ddlFatherAlive" id="ddlFatherAlive" class="dd_NoWidth" 
                                  onChange={handleChange}>
-                                    <option value="" selected="selected">தந்தை நிலை குறித்து</option>
+                                    <option value="" selected="selected">{formVarans.fatherAlive}</option>
                                     <option value="alive">Alive</option>
                                     <option value="dead">Dead</option>
                                 </select>
@@ -604,6 +605,7 @@ const UpdateVaran = () => {
                                 className="form-input"
                                 name="txtFatherJob"
                                 id="txtFatherJob"
+                                value={formVarans.fatherJob}
                                 onChange={handleChange}
                                 />
                             </div><br/>
@@ -620,6 +622,7 @@ const UpdateVaran = () => {
                                 className="form-input"
                                 name="txtMotherName"
                                 id="txtMotherName"
+                                value={formVarans.motherName}
                                  onChange={handleChange}
                                 />
                             </div>
@@ -628,7 +631,7 @@ const UpdateVaran = () => {
                                 <b>Mother's Alive</b> <br/>
                                 <select name="ddlMotherAlive" id="ddlMotherAlive" class="dd_NoWidth"
                                      onChange={handleChange} >
-                                    <option value="" selected="selected">தாயார் நிலை குறித்து</option>
+                                    <option value="" selected="selected">{formVarans.motherAlive}</option>
                                     <option value="alive">Alive</option>
                                     <option value="dead">Dead</option>
                                 </select>
@@ -643,6 +646,7 @@ const UpdateVaran = () => {
                                 className="form-input"
                                 name="txtMotherJob"
                                 id="txtMotherJob"
+                                value={formVarans.motherJob}
                                 onChange={handleChange}
                                 />
                             </div><br/>
@@ -676,7 +680,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlMarriedElderBrothers" id="ddlMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                         onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.marriedElderBrothers}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -688,7 +692,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlMarriedYoungerBrothers" id="ddlMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.marriedYoungerBrothers}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -700,7 +704,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlMarriedElderSisters" id="ddlMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.marriedElderSisters}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -712,7 +716,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlMarriedYoungerSisters" id="ddlMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange} >
-                                        <option value="0" selected>நபர்கள்</option>
+                                        <option value="0" selected>{formVarans.marriedYoungerSisters}</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -732,7 +736,7 @@ const UpdateVaran = () => {
                                 <td >
                                     <select name="ddlUnMarriedElderBrothers" id="ddlUnMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                        <option value="0" selected>நபர்கள்</option>
+                                        <option value="0" selected>{formVarans.unMarriedElderBrothers}</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -744,7 +748,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlUnMarriedYoungerBrothers" id="ddlUnMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.unMarriedYoungerBrothers}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -756,7 +760,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlUnMarriedElderSisters" id="ddlUnMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.unMarriedElderSisters}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -768,7 +772,7 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlUnMarriedYoungerSisters" id="ddlUnMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                        onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
+                                    <option value="0" selected>{formVarans.unMarriedYoungerSisters}</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -795,7 +799,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlResidentialType" id="ddlResidentialType">
-                                            <option value="0-Not Specified">தங்கும் வசதி</option>
+                                            <option value="0-Not Specified">{formVarans.residentialTypeStr}</option>
                                             <option value="1-Father House">Father House - தகப்பனார் வீடு</option>
                                             <option value="2-Own House">Own House - சொந்த வீடு</option>
                                             <option value="3-Rented House">Rented House - வாடகை வீடு</option>
@@ -816,7 +820,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlVehicleOwned" id="ddlVehicleOwned">
-                                            <option value="0-No Vehicle">வாகன வசதி இல்லை</option>
+                                            <option value="0-No Vehicle">{formVarans.vehicleOwnedStr}</option>
                                             <option value="2-2_Wheeler">2 Wheeler - இரு சக்கர வாகனம்</option>
                                             <option value="3-4_Wheeler">4 Wheeler - நான்கு சக்கர வாகனம்</option>
                                             <option value="4-2+4_Wheeler">2+4 Wheeler - இரு நான்கு சக்கர வாகனம்</option>
@@ -837,7 +841,7 @@ const UpdateVaran = () => {
                                         <textarea name="txtOtherDetails" rows="2" cols="10" 
                                          placeholder="இதர விபரங்கள்"   id="txtOtherDetails" 
                                          class="textbox" style={{height:"80px", width: "665px" }}
-                                         onChange={handleChange}></textarea>
+                                         value={formVarans.otherDetails} onChange={handleChange}></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -854,7 +858,7 @@ const UpdateVaran = () => {
                                     <td align="left">
                                     <select name="ddlHeight" id="ddlHeight" class="dd_NoWidth" style={{width: "150px"}}
                                         onChange={handleChange}>
-                                    <option value="1">உயரம் -ft-</option>
+                                    <option value="1">{formVarans.height}</option>
                                     <option value="2">4ft - 121 cm</option>
                                     <option value="3">4ft 1in - 124cm</option>
                                     <option value="4">4ft 2in - 127cm</option>
@@ -1009,7 +1013,7 @@ const UpdateVaran = () => {
                                 <td  align="left">
                                     <select name="ddlBloodGroup" id="ddlBloodGroup" class="dd_NoWidth"
                                         onChange={handleChange}>
-                                    <option value="0-0">-Select- குருதி வகை</option>
+                                    <option value="0-0">-{formVarans.bloodGroupStr}</option>
                                     <option value="1-O+">O+</option>
                                     <option value="2-A+">A+</option>
                                     <option value="3-B+">B+</option>
@@ -1028,7 +1032,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlDiet" id="ddlDiet" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">உணவு விபரம்</option>
+                                            <option value="0-0" selected="selected">{formVarans.diet}</option>
                                             <option value="1-Vegetarian">Vegetarian</option>
                                             <option value="2-NonVegetarian">Non-Vegetarian</option>
                                             <option value="3-Eggetarian">Eggetarian</option>
@@ -1039,7 +1043,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td>                    
                                         <select name="ddlPhysicalStatus" id="ddlPhysicalStatus" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">ஊனம்</option>
+                                            <option value="0-0" selected="selected">{formVarans.physicalStatus}</option>
                                             <option value="1-Normal" checked="checked" >No-இல்லை</option>
                                             <option  value="2-PhysicallyChallenged" >Yes-ஆம்</option>    
                                             <option  value="3-EyeBlindness" >EyeBlindness -பார்வை குறை</option>       
@@ -1052,7 +1056,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlComplexion" id="ddlComplexion" onChange={handleChange}>
-                                            <option value="0-0">-Select- உடல் நிறம்</option>
+                                            <option value="0-0">{formVarans.complexion}</option>
                                             <option value="1-VeryFair" >Very Fair</option>
                                             <option value="2-Fair" >Fair</option>
                                             <option value="3-Wheatish" >Wheatish</option>

@@ -47,13 +47,14 @@ const Navbar = () => {
                 </li>
                 &nbsp;
                 <li className="nav-item">
-                <a className="btn btn-primary" href="/searchVaran" hover="red" title="வரண் தேடுதல்">
+                <a className="btn btn-primary" href="/searchVaran" hover="red" 
+                      title="வரண் தேடுதல்">
                   Search 
                 </a>
                 </li>
                 &nbsp;
                 <li className="nav-item">
-                  <a className="btn btn-primary" href="#" hover="red">
+                  <a className="btn btn-primary" href="/contact" hover="red">
                      Contact
                   </a>
                 </li>
