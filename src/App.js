@@ -8,6 +8,7 @@ import ViewVaran from './component/ViewVaran';
 import SearchVaran from './component/SearchVaran';
 import RegisterVaran from './component/RegisterVaran';
 import Varan from './component/Varan';
+import UpdateVaran from './component/UpdateVaran';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
        <Route path='/varan/viewVaran/:id' element={<ViewVaran />}></Route>        
        <Route path='/viewVaran' element={<ViewVaran />}></Route>        
        <Route path='/searchVaran' element={<SearchVaran />}></Route>        
+       <Route path='/updateVaran/:id' element={<UpdateVaran />}></Route>        
+       <Route path='/varan/updateVaran/:id' element={<UpdateVaran />}></Route>        
     </Routes>    
   </BrowserRouter>
   );

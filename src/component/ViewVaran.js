@@ -214,6 +214,7 @@ const ViewVaran = () => {
                     transactionDate: res.data[0].transactionDate, modeOfPayment: res.data[0].modeOfPayment , transactionReference: res.data[0].transactionReference, isMarried: res.data[0].isMarried, isDeleted: res.data[0].isDeleted,
                     createdBy: res.data[0].createdBy, createdOn: res.data[0].createdOn, updatedBy: res.data[0].updatedBy, updatedOn: res.data[0].updatedOn   
                  });
+                 console.log("use Effect : ");
                  console.log(formVaran);
             })
             .catch(err => console.log(err));
