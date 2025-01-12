@@ -1,0 +1,21 @@
+
+.rounded-div {
+    border-radius: 15px; /* Adjust the value as needed */
+    padding: 20px;
+    background-color: DodgerBlue;
+    overflow-y:auto;
+  }
+
+.rounded-div1 {
+    border-radius: 15px; /* Adjust the value as needed */
+    padding: 120px;
+    background-color: white;
+    overflow-y:scroll;
+    height: 500px;
+  }
+
+  .uniform-size {
+    width: 250px; /* Set your desired width */
+    height: 250px; /* Set your desired height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}

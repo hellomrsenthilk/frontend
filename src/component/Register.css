@@ -1,0 +1,452 @@
+#header{
+    position:fixed;
+    top:0%;
+    width:100vw;
+    height:10vmin;
+    background:linear-gradient(to right,#538282,#576363);
+
+    }
+    
+     #header img{
+     float: left;
+     width: 8vw;
+     height: 7.5vh;
+     background: #555;
+     cursor: pointer;
+     margin-left: 0.5vw;
+     margin-top:0.5%;
+     /*border-radius: 15px;*/
+     } 
+     #rForm1{
+         position:absolute;
+         z-index:2;
+         top:10%;
+     }
+     #rForm2{
+         margin-top: -15px;
+     }
+    .icons{
+       color:white;
+       float:right;
+       width:8%;
+       background:linear-gradient(to right,#538282,#576363);
+       padding: 2px;
+       margin-top: 0.75em;
+       margin-left:0.5em;
+       border:1px solid grey;
+    }
+    .icons:hover {
+     background-color: white;
+     color:#ff6600;;
+    }
+    .headerDiv{
+     text-align: center;
+     font-size: 1.25vw;
+     font-family: 'Krub', sans-serif;
+    }
+
+    #form{height:400px;overflow-y:auto}
+    #form{height:400px;overflow-y:auto}
+
+    #Register{
+        position:relative;	
+        opacity:0.8;
+        margin-top:7%;
+        margin-left:35%;
+        width:30%;
+        height:80vmin;
+     border-bottom: 15%; 
+     background-color: lightgrey;
+     border-radius: 1vmin;
+     padding: 2vmin;
+    }
+     #Form {
+     position:relative;
+     z-index:2;
+     border-bottom: 15%; 
+     margin-top:0.5%;
+     margin-left:3%;
+     width:100%;
+     height:45vmin;  
+     background-color: lightgrey;
+     border-radius: 10px;
+     padding: 15px 15px;
+     padding-bottom:15px;
+     padding-top: 15px;
+    }
+    .slideShow{
+           position:relative;
+        width:100vw;
+        height:80vmin;
+        margin-top:-86vmin/*-650px*/;
+        z-index: -1;
+    }
+    .controls{
+          position:absolute;
+          top:50%;
+          left:2%;
+          z-index:2;
+    }
+    #rightCtrl{
+        left:96%;
+    }
+    .slides >img{
+        position: absolute;/**/
+        left:0%;
+        width:100%;
+        top:2%;
+        height:110%;
+
+    }
+    button {
+     background-color: black;
+     border-radius: 5px;
+     color: white;
+     padding: 10px 10px;
+     text-decoration: none;
+     margin: 4px 2px;
+     cursor: pointer;
+     width:100%;
+     font-size: 1.5vw;
+     padding-right : 5%;
+     }
+     #btns{
+       margin-right:20px;
+     }
+    
+     #quote{
+       position:absolute;
+       left:0%;
+       top:95%;
+       width:100%;
+       height:40%;
+       background:linear-gradient(to right bottom,#ff8080,#33cccc);
+       color:black;
+     }
+     #quoteMsg1{
+       position: absolute;
+       left:30%;
+       top:20%;
+       font-size:4vmin;
+       font-weight:700;
+       font-family:monospace;
+     }
+     #quoteMsg2{
+       position: absolute;
+       left:20%;
+       top:40%;
+       font-size:4vmin;
+       font-weight:700;
+       font-family:monospace;
+     }
+     #quoteMsg3{
+       position: absolute;
+       left:24%;
+       top:65%;
+       font-size:4.6vmin;
+       color:black;
+       font-family:monospace;
+       text-shadow:2px 2px #33cccc; 
+       font-weight:800;
+     }
+     #stories{
+       position:absolute;
+       left:0%;
+       right:0%;
+       height:60%;
+       top:135%;
+       background-color:white;
+     }
+     #sTop
+     {
+       position: absolute;
+       top:5%;
+       left:35%;
+       font-size:4vmin;
+       color:red;
+       letter-spacing:4px;
+       font-family:sans-serif;
+       font-weight:600;
+     }
+     #story1,#story2,#story3{
+       position: absolute;
+       left:10%;
+       top:28%;
+       width:20%;
+       height:62%;
+       background-color:white;
+       border:1px solid grey ;
+       border-radius:1%;
+       box-shadow:5px 5px 5px 1px grey;
+     }
+     #story2{
+       left:40%;
+     }
+     #story3{
+       left:70%;
+     }
+     .storyImg{
+       position:absolute;
+       top:5%;
+       left:5%;
+       width:90%;
+       height:60%;
+     }
+     .coupleNames{
+       position: absolute;
+       top:68%;
+       left:30%;
+       font-size:2.1vmin;
+       font-weight:600;
+       color:#666699;
+     }
+     .coupleStory{
+       position: absolute;
+       top:77%;
+       left:1%;
+       right:1%;
+       font-size:1.5vmin;
+     }
+     #footer{ 
+     position:absolute;
+     background:#323438;
+     top:195%;
+     width:100%;
+     height:40%;
+    }
+    #About{
+       color: white;
+    }
+    #divider{
+       position:absolute;
+       top:47.4%;
+       left:60%;
+       width:22vmin;
+       height:5%;
+       border-radius:5%/5%;
+       transform:skew(6deg,120deg);
+       background-color:#f44242;
+    }
+     #AboutUs{
+        position:absolute;
+        left:14%;
+        top:10%;
+        font-family:sans-serif;
+        font-size:3vmin;
+     }
+     #AboutMsg{
+       position: absolute;
+       left:2%;
+       width:30%;
+       top:32%;
+       font-size:1.8vmin;
+       letter-spacing:1px;
+       color:#f44242;
+     }
+     #AboutTeam{
+       position: absolute;
+       left:45%;
+       top:10%;
+       font-family:sans-serif;
+       font-size:3vmin;
+     }
+     .Team {
+       position: absolute;
+       left:35%;
+       top:30%;
+       width:15vmin;
+       height:15vmin;
+       border-radius:50%;
+       border:2px solid #323438;
+     }
+     #img2{
+       position: absolute;
+       left:45%;
+     }
+     #img3{
+       position: absolute;
+       left:55%;
+     }
+     #vam,#nit,#mad{
+       position: absolute;
+       left:37%;
+       top:43%;
+       color: white;
+     }
+     #nit{
+        left:47%;
+     }
+     #mad{
+       left:57%;
+     }
+     #copyrights{
+       position:absolute;
+       left:2%;
+       top:70%;
+       font-size:1.6vmin;
+       color:white;
+
+     }
+     #version{
+       position:absolute;
+       left:2%;
+       top:76%;
+       font-size:1.6vmin;
+       color:white;
+     }
+     #teamId{
+       position: absolute;
+       left:25%;
+       top:90%;
+       font-size:2vmin;
+       color:cyan;
+       letter-spacing:1px;
+     }
+     .heart-color{
+       color:red;
+     }
+     #Feedback{
+       position: absolute;
+       left:65%;
+       width:35%;
+       height:100%;
+
+    }
+    #FeedbackHead{
+       position: absolute;
+       left:45%;
+       top:10%;
+       color:white;
+       font-family:sans-serif;
+       font-size:3vmin;
+
+    }
+    #mailTxt{
+      position: absolute;
+      left:20%;
+      top:30%;
+      font-size:2.5vmin;
+      color:#ff6600;
+      letter-spacing:1px;
+    }
+    #gmailIcon{
+      position: absolute;
+      left:50%;
+      top:31%;
+      font-size:2.2vmin;
+      color:grey;
+    }
+    .gmail{
+      color :red;
+    }
+   
+     #sm{
+     position: absolute;
+     left:30%;
+     top:55%;
+     font-size:2.5vmin;
+     font-family:monospace;
+     letter-spacing:6px;
+     color: white;
+    }
+    #fIcon,#iIcon{
+       position: absolute;
+       left:40%;
+       top:65%;
+       width:10%;
+       height:10%;
+       
+    }
+    .fCol{
+       color: #66a3ff;
+       font-size: 20px;
+    }
+    #fIcon > button{
+       border:none;
+       background-color:#323438;
+    }
+    #iIcon{
+        color: white;
+        left:60%;
+    }
+    .iCol{
+       font-size:20px;
+       color: #ff5050;
+
+    }
+    #iIcon >button{
+       border:none;
+       background-color:#323438;
+    }
+       
+    *:focus{
+     outline:none;
+    }
+    body{
+     overflow-x: hidden;
+     scroll-behavior:smooth;
+     width: 100%;
+    }
+    input[type=email], input[type=password], input[type=text] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     box-sizing: border-box;
+     border: 2px;
+     border-radius: 4px;
+    }
+    textarea, input[type=date], datalist, input[type=number], #motherTongue{
+     width: 100%;
+     padding: 10px 15px;
+     margin: 4px 0;
+     box-sizing: border-box;
+     border: 2px;
+     border-radius: 4px;
+    }
+   input:focus, textarea:focus {
+   border: 3px solid #555;
+   }
+   #radio{
+     position: relative;
+     margin-top: -20px;
+   }
+   #privacy{
+     position: relative;
+     margin-top: -4px;
+   }
+   ::placeholder, #radiotxt, b{
+     font-size: 1.25vw;
+     font-family: 'Krub', sans-serif;
+     color:black;
+   }
+   #maleRadio{
+     margin: 0 20px 0 50px;
+   }
+   #femaleRadio{
+     margin: 0 100px 0 20px;
+   }
+   #pvtRadio{
+     margin: 0 20px 0 20px;
+   }
+   input[type=button], input[type=submit], #submitA ,#submitB, #submitC {
+   background-color: black;
+   border-radius: 5px;
+   color: white;
+   padding: 10px 10px;
+   text-decoration: none;
+   margin: 4px 2px;
+   cursor: pointer;
+   width:100%;
+   font-size: 1.5vw;
+   padding-right : 5%;
+   }
+   input[type=button]:hover, input[type=submit]:hover ,#submitA:hover ,#submitB:hover, #submitC:hover{
+   background-color: white; /* Green */
+   color: black;
+   border:2px solid black;
+   cursor: pointer;
+   }
+   *:focus{
+     outline:none;
+   }
+ 

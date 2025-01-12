@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>start</title>
+	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/Capture.PNG">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style type="text/css">
+      </style>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	  var slideIndex=1;
+	  var factor=1;
+	  switchSlides(slideIndex);
+            
+            setInterval(function addSlide()
+            {
+            	console.log("called");
+            	slideIndex+=factor;
+            	console.log(slideIndex);
+            	switchSlides(slideIndex);
+            	 
+            },5000);
+            function switchSlides(n)
+            {
+            	console.log("wat");
+               var slides=document.getElementsByClassName("slides");
+               if(n>slides.length)
+               	  slideIndex=1;
+               	if(n<1)
+               		slideIndex=slides.length;
+               	for(var i=0;i<slides.length;i++)
+               		slides[i].style.display="none";
+               	slides[slideIndex-1].style.display="block";
+            }
+            function nextSlide(x)
+            {
+            	slideIndex+=x;
+            	switchSlides(slideIndex);
+            }
+	       $(document).ready(function(){
+                $("#rForm2").hide();
+                $("#rForm3").hide();
+                $("#submitA").click(function(){
+                  var password = $("#password").val();
+                  var confirmPassword = $("#repassword").val();
+                  var email = $("#email").val();
+                  var pname = $("#pname").val();
+                  var fname = $("#fname").val();
+                  var lname = $("#lname").val();
+                  var gender = $("#gender").val();
+                  console.log(gender);
+                  console.log(password);
+                  console.log(confirmPassword);
+                  if(email.length==0 || pname.length==0 || fname.length==0 || lname.length==0 || password.length==0 ||gender.length==0)
+                  {
+                    alert("Insufficient Credentials");
+                  }
+                  if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                  }
+                  else{
+                      $("#rForm1").hide();
+                      $("#rForm2").show();
+                  }
+                });
+                $("#submitB").click(function(){
+                      $("#rForm2").hide();
+                        $("#rForm3").show();
+                });
+                $("#FeedbackIcon").click(function(){
+            $('html,body').animate({
+                scrollTop:$("#Feedback").offset().top
+            },1500);
+            });
+             $("#AboutIcon").click(function(){
+            $('html,body').animate({
+                scrollTop:$("#About").offset().top
+            },1500);
+        });
+             $("#AboutUs").hover(function(){
+                 $("#AboutUs").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#AboutUs").css("border-bottom","none");
+             }
+             );
+             $("#AboutTeam").hover(function(){
+                 $("#AboutTeam").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#AboutTeam").css("border-bottom","none");
+             }
+             );
+             $("#FeedbackHead").hover(function(){
+                 $("#FeedbackHead").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#FeedbackHead").css("border-bottom","none");
+             }
+             );
+             $("#vam,#nit,#mad").css("display","none");
+             $("#img1,#vam").hover(function(){
+                 $("#img1").css("opacity","0.6");
+                 $("#vam").css("display","block");
+                 $("#img1").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img1").css("opacity","1");
+                $("#vam").css("display","none");
+                $("#img1").css("border","2px solid #323438");
+             }
+             );
+             $("#img2,#nit").hover(function(){
+                 $("#img2").css("opacity","0.6");
+                 $("#nit").css("display","block");
+                 $("#img2").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img2").css("opacity","1");
+                $("#nit").css("display","none");
+                $("#img2").css("border","2px solid #323438");
+             }
+             );
+             $("#img3,#mad").hover(function(){
+                 $("#img3").css("opacity","0.6");
+                 $("#mad").css("display","block");
+                 $("#img3").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img3").css("opacity","1");
+                $("#mad").css("display","none");
+                $("#img3").css("border","2px solid #323438");
+             }
+             );
+             $("#fIcon").hover(function(){
+                 $(".fCol").css("font-size","30px");
+             },
+             function(){
+                $(".fCol").css("font-size","20px");
+             }
+             );
+              $("#iIcon").hover(function(){
+                 $(".iCol").css("font-size","30px");
+             },
+             function(){
+                $(".iCol").css("font-size","20px");
+             }
+             );
+         });
+         var password = document.getElementById("password");
+  var confirm_password = document.getElementById("repassword");
+  var submitA = document.getElementById("submitA");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+var email=document.getElementById("email").value;
+submitA.onclick = validateEmail(email);
+submitA.onclick = validatePassword;
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+//submitA.onclick = validateEmail(email);
+function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+        return true;
+}
+</script>
+</html>
