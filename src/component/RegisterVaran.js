@@ -235,9 +235,9 @@ const RegisterVaran = () => {
                                 </label><br/>
                                 <select name="ddlSex" id="ddlSex" class="dd_NoWidth" 
                                      className="font-size-13"  onChange={handleChange}>
-                                    <option value="" selected="selected" >பாலினம்</option>
-                                    <option value="male" >Male - ஆண்</option>
-                                    <option value="female">Female - பெண்</option>
+                                    <option value="0-பாலினம்" selected="selected" >பாலினம்</option>
+                                    <option value="1-Male ஆண்" >Male - ஆண்</option>
+                                    <option value="2-Female பெண்">Female - பெண்</option>
                                 </select>
                             </div>
                             <div className="col-3">
@@ -259,92 +259,91 @@ const RegisterVaran = () => {
                                 </label> <br/>
                                 <select name="ddlTimeOfBirth" id="ddlTimeOfBirth" class="dd_NoWidth"
                                    onChange={handleChange}>
-                                <option value="Hr" selected="selected">HR</option>
-                                <option value="0">00</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
+                                <option value="0-HR" selected="selected">HR</option>
+                                <option value="1-1">1</option>
+                                <option value="2-2">2</option>
+                                <option value="3-3">3</option>
+                                <option value="4-4">4</option>
+                                <option value="5-5">5</option>
+                                <option value="6-6">6</option>
+                                <option value="7-7">7</option>
+                                <option value="8-8">8</option>
+                                <option value="9-9">9</option>
+                                <option value="10-10">10</option>
+                                <option value="11-11">11</option>
+                                <option value="12-12">12</option>
                                 </select>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                         <select name="ddlMinOfBirth" id="ddlMinOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                            <option value="MIN" selected>MIN</option>
-                            <option value="0">00</option>
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                            <option value="32">32</option>
-                            <option value="33">33</option>
-                            <option value="34">34</option>
-                            <option value="35">35</option>
-                            <option value="36">36</option>
-                            <option value="37">37</option>
-                            <option value="38">38</option>
-                            <option value="39">39</option>
-                            <option value="40">40</option>
-                            <option value="41">41</option>
-                            <option value="42">42</option>
-                            <option value="43">43</option>
-                            <option value="44">44</option>
-                            <option value="45">45</option>
-                            <option value="46">46</option>
-                            <option value="47">47</option>
-                            <option value="48">48</option>
-                            <option value="49">49</option>
-                            <option value="50">50</option>
-                            <option value="51">51</option>
-                            <option value="52">52</option>
-                            <option value="53">53</option>
-                            <option value="54">54</option>
-                            <option value="55">55</option>
-                            <option value="56">56</option>
-                            <option value="57">57</option>
-                            <option value="58">58</option>
-                            <option value="59">59</option>
+                            <option value="0-MIN" selected>MIN</option>
+                            <option value="0-00">00</option>
+                            <option value="1-01">01</option>
+                            <option value="2-02">02</option>
+                            <option value="3-03">03</option>
+                            <option value="4-04">04</option>
+                            <option value="5-05">05</option>
+                            <option value="6-06">06</option>
+                            <option value="7-07">07</option>
+                            <option value="8-08">08</option>
+                            <option value="9-09">09</option>
+                            <option value="10-10">10</option>
+                            <option value="11-11">11</option>
+                            <option value="12-12">12</option>
+                            <option value="13-13">13</option>
+                            <option value="14-14">14</option>
+                            <option value="15-15">15</option>
+                            <option value="16-16">16</option>
+                            <option value="17-17">17</option>
+                            <option value="18-18">18</option>
+                            <option value="19-19">19</option>
+                            <option value="20-20">20</option>
+                            <option value="21-21">21</option>
+                            <option value="22-22">22</option>
+                            <option value="23-23">23</option>
+                            <option value="24-24">24</option>
+                            <option value="25-25">25</option>
+                            <option value="26-26">26</option>
+                            <option value="27-27">27</option>
+                            <option value="28-28">28</option>
+                            <option value="29-29">29</option>
+                            <option value="30-30">30</option>
+                            <option value="31-31">31</option>
+                            <option value="32-32">32</option>
+                            <option value="33-33">33</option>
+                            <option value="34-34">34</option>
+                            <option value="35-35">35</option>
+                            <option value="36-36">36</option>
+                            <option value="37-37">37</option>
+                            <option value="38-38">38</option>
+                            <option value="39-39">39</option>
+                            <option value="40-40">40</option>
+                            <option value="41-41">41</option>
+                            <option value="42-42">42</option>
+                            <option value="43-43">43</option>
+                            <option value="44-44">44</option>
+                            <option value="45-45">45</option>
+                            <option value="46-46">46</option>
+                            <option value="47-47">47</option>
+                            <option value="48-48">48</option>
+                            <option value="49-49">49</option>
+                            <option value="50-50">50</option>
+                            <option value="51-51">51</option>
+                            <option value="52-52">52</option>
+                            <option value="53-53">53</option>
+                            <option value="54-54">54</option>
+                            <option value="55-55">55</option>
+                            <option value="56-56">56</option>
+                            <option value="57-57">57</option>
+                            <option value="58-58">58</option>
+                            <option value="59-59">59</option>
                     </select>
                         &nbsp;&nbsp;
                         <select name="ddlSecOfBirth" id="ddlSecOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                        <option value="0" selected>காலம்</option>
-                        <option value="AM">AM - காலை</option>
-                        <option value="PM">PM - மாலை</option>
+                        <option value="0-காலம்" selected>காலம்</option>
+                        <option value="1-AM">AM - காலை</option>
+                        <option value="2-PM">PM - மாலை</option>
                     </select>
                             </div>
                             <div className="col-3">
@@ -382,14 +381,12 @@ const RegisterVaran = () => {
                                 className="form-input"
                                 name="ddlMotherTongue"
                                 id="ddlMotherTongue"
-                                onChange={handleChange}
-                                >
-                                    <option value="0-0" selected="selected">தாய் மொழி</option>
-                                    <option value="1-Tamil" >Tamil - தமிழ்</option>
-                                    <option value="2-Telugu" >Telugu - தெலுங்கு</option>
-                                    <option value="3-Malayalam" >Malayalam - மலையாளம்</option>
-                                    <option value="4-Kannada" >Kannada - கன்னடம்</option>
-
+                                onChange={handleChange}>
+                                    <option value="0-தாய் மொழி" selected="selected">தாய் மொழி</option>
+                                    <option value="1-Tamil தமிழ்" >Tamil - தமிழ்</option>
+                                    <option value="2-Telugu தெலுங்கு" >Telugu - தெலுங்கு</option>
+                                    <option value="3-Malayalam மலையாளம்" >Malayalam - மலையாளம்</option>
+                                    <option value="4-Kannada கன்னடம்" >Kannada - கன்னடம்</option>
                                 </select>
                             </div>
                             <div className="col-3">
@@ -397,7 +394,7 @@ const RegisterVaran = () => {
                                 <b>Marital status </b><br/>
                                 <select name="ddlMaritialStatus" id="ddlMaritialStatus" class="dd_NoWidth" 
                                      onChange={handleChange}>
-                                    <option value="0-0" selected="selected">திருமண தகுதி நிலை</option>
+                                    <option value="0-திருமண தகுதி நிலை" selected="selected">திருமண தகுதி நிலை</option>
                                     <option value="1-Unmarried">Unmarried - திருமணம் ஆகாதவர்</option>
                                     <option value="2-Married">Married - திருமணம் ஆணவர்</option>
                                     <option value="3-Widow">Widow - விதவை</option>
@@ -426,9 +423,9 @@ const RegisterVaran = () => {
                                 <b>Father's Alive</b> <br/>
                                 <select name="ddlFatherAlive" id="ddlFatherAlive" class="dd_NoWidth" 
                                  onChange={handleChange}>
-                                    <option value="" selected="selected">தந்தை நிலை குறித்து</option>
-                                    <option value="alive">Alive</option>
-                                    <option value="dead">Dead</option>
+                                    <option value="0-தந்தை நிலை குறித்து" selected="selected">தந்தை நிலை குறித்து</option>
+                                    <option value="1-Alive">Alive</option>
+                                    <option value="2-Dead">Dead</option>
                                 </select>
                             </div>
                             <div className="col-4">
@@ -465,9 +462,9 @@ const RegisterVaran = () => {
                                 <b>Mother's Alive</b> <br/>
                                 <select name="ddlMotherAlive" id="ddlMotherAlive" class="dd_NoWidth"
                                      onChange={handleChange} >
-                                    <option value="" selected="selected">தாயார் நிலை குறித்து</option>
-                                    <option value="alive">Alive</option>
-                                    <option value="dead">Dead</option>
+                                    <option value="0-தாயார் நிலை குறித்து" selected="selected">தாயார் நிலை குறித்து</option>
+                                    <option value="1-Alive">Alive</option>
+                                    <option value="2-Dead">Dead</option>
                                 </select>
                             </div>
                             <div className="col-4">
@@ -513,49 +510,49 @@ const RegisterVaran = () => {
                                 <td>
                                     <select name="ddlMarriedElderBrothers" id="ddlMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                         onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                 </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedYoungerBrothers" id="ddlMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                  </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedElderSisters" id="ddlMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedYoungerSisters" id="ddlMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange} >
-                                        <option value="0" selected>நபர்கள்</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 and above</option>
+                                        <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                        <option value="1-0 நபர்கள்">0</option>
+                                        <option value="2-1 நபர்கள்">1</option>
+                                        <option value="3-2 நபர்கள்">2</option>
+                                        <option value="4-3 நபர்கள்">3</option>
+                                        <option value="5-4 நபர்கள்">4</option>
+                                        <option value="6-5 நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>&nbsp;
@@ -569,49 +566,49 @@ const RegisterVaran = () => {
                                 <td >
                                     <select name="ddlUnMarriedElderBrothers" id="ddlUnMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                        <option value="0" selected>நபர்கள்</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 and above</option>
+                                        <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                        <option value="1-0 நபர்கள்">0</option>
+                                        <option value="2-1 நபர்கள்">1</option>
+                                        <option value="3-2 நபர்கள்">2</option>
+                                        <option value="4-3 நபர்கள்">3</option>
+                                        <option value="5-4 நபர்கள்">4</option>
+                                        <option value="6-5 நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedYoungerBrothers" id="ddlUnMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedElderSisters" id="ddlUnMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                 </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedYoungerSisters" id="ddlUnMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                        onChange={handleChange}>
-                                    <option value="0" selected>நபர்கள்</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="0-நபர்கள்" selected>நபர்கள்</option>
+                                    <option value="1-0 நபர்கள்">0</option>
+                                    <option value="2-1 நபர்கள்">1</option>
+                                    <option value="3-2 நபர்கள்">2</option>
+                                    <option value="4-3 நபர்கள்">3</option>
+                                    <option value="5-4 நபர்கள்">4</option>
+                                    <option value="6-5 நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 </tr>
@@ -632,7 +629,7 @@ const RegisterVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlResidentialType" id="ddlResidentialType">
-                                            <option value="0-Not Specified">தங்கும் வசதி</option>
+                                            <option value="0-தங்கும் வசதி">தங்கும் வசதி</option>
                                             <option value="1-Father House">Father House - தகப்பனார் வீடு</option>
                                             <option value="2-Own House">Own House - சொந்த வீடு</option>
                                             <option value="3-Rented House">Rented House - வாடகை வீடு</option>
@@ -653,7 +650,8 @@ const RegisterVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlVehicleOwned" id="ddlVehicleOwned">
-                                            <option value="0-No Vehicle">வாகன வசதி இல்லை</option>
+                                            <option value="0-வாகன வசதி">வாகன வசதி </option>
+                                            <option value="1-No Vehicle">வாகன வசதி இல்லை</option>
                                             <option value="2-2_Wheeler">2 Wheeler - இரு சக்கர வாகனம்</option>
                                             <option value="3-4_Wheeler">4 Wheeler - நான்கு சக்கர வாகனம்</option>
                                             <option value="4-2+4_Wheeler">2+4 Wheeler - இரு நான்கு சக்கர வாகனம்</option>
@@ -691,44 +689,45 @@ const RegisterVaran = () => {
                                     <td align="left">
                                     <select name="ddlHeight" id="ddlHeight" class="dd_NoWidth" style={{width: "150px"}}
                                         onChange={handleChange}>
-                                    <option value="1">உயரம் -ft-</option>
-                                    <option value="2">4ft - 121 cm</option>
-                                    <option value="3">4ft 1in - 124cm</option>
-                                    <option value="4">4ft 2in - 127cm</option>
-                                    <option value="5">4ft 3in - 129cm</option>
-                                    <option value="6">4ft 4in - 132cm</option>
-                                    <option value="7">4ft 5in - 134cm</option>
-                                    <option value="8">4ft 6in - 137cm</option>
-                                    <option value="9">4ft 7in - 139cm</option>
-                                    <option value="10">4ft 8in - 142cm</option>
-                                    <option value="11">4ft 9in - 144cm</option>
-                                    <option value="12">4ft 10in - 147cm</option>
-                                    <option value="13">4ft 11in - 149cm</option>
-                                    <option value="14">5ft - 152cm</option>
-                                    <option value="15">5ft 1in - 154cm</option>
-                                    <option value="16">5ft 2in - 157cm</option>
-                                    <option value="17">5ft 3in - 160cm</option>
-                                    <option value="18">5ft 4in - 162cm</option>
-                                    <option value="19">5ft 5in - 165cm</option>
-                                    <option value="20">5ft 6in - 167cm</option>
-                                    <option value="21">5ft 7in - 170cm</option>
-                                    <option value="22">5ft 8in - 172cm</option>
-                                    <option value="23">5ft 9in - 175cm</option>
-                                    <option value="24">5ft 10in - 177cm</option>
-                                    <option value="25">5ft 11in - 180cm</option>
-                                    <option value="26">6ft - 182cm</option>
-                                    <option value="27">6ft 1in - 185cm</option>
-                                    <option value="28">6ft 2in - 187cm</option>
-                                    <option value="29">6ft 3in - 190cm</option>
-                                    <option value="30">6ft 4in - 193cm</option>
-                                    <option value="31">6ft 5in - 195cm</option>
-                                    <option value="32">6ft 6in - 198cm</option>
-                                    <option value="33">6ft 7in - 200cm</option>
-                                    <option value="34">6ft 8in - 203cm</option>
-                                    <option value="35">6ft 9in - 205cm</option>
-                                    <option value="36">6ft 10in - 208cm</option>
-                                    <option value="37">6ft 11in - 210cm</option>
-                                    <option value="38">7ft - 213cm</option>
+                                    <option value="0-உயரம் _ft_">உயரம் -ft-</option>
+                                    <option value="1-Below 4ft ">Below 4ft - 121 cm</option>
+                                    <option value="2-4ft">4ft - 121 cm</option>
+                                    <option value="3-4ft 1in">4ft 1in - 124cm</option>
+                                    <option value="4-4ft 2in">4ft 2in - 127cm</option>
+                                    <option value="5-4ft 3in">4ft 3in - 129cm</option>
+                                    <option value="6-4ft 4in">4ft 4in - 132cm</option>
+                                    <option value="7-4ft 5in">4ft 5in - 134cm</option>
+                                    <option value="8-4ft 6in">4ft 6in - 137cm</option>
+                                    <option value="9-4ft 7in">4ft 7in - 139cm</option>
+                                    <option value="10-4ft 8in">4ft 8in - 142cm</option>
+                                    <option value="11-4ft 9in">4ft 9in - 144cm</option>
+                                    <option value="12-4ft 10in">4ft 10in - 147cm</option>
+                                    <option value="13-4ft 11in">4ft 11in - 149cm</option>
+                                    <option value="14-5ft">5ft - 152cm</option>
+                                    <option value="15-5ft">5ft 1in - 154cm</option>
+                                    <option value="16-5ft 2in">5ft 2in - 157cm</option>
+                                    <option value="17-5ft 3in">5ft 3in - 160cm</option>
+                                    <option value="18-5ft 4in">5ft 4in - 162cm</option>
+                                    <option value="19-5ft 5in">5ft 5in - 165cm</option>
+                                    <option value="20-5ft 6in">5ft 6in - 167cm</option>
+                                    <option value="21-5ft 7in">5ft 7in - 170cm</option>
+                                    <option value="22-5ft 8in">5ft 8in - 172cm</option>
+                                    <option value="23-5ft 9in">5ft 9in - 175cm</option>
+                                    <option value="24-5ft 10in">5ft 10in - 177cm</option>
+                                    <option value="25-5ft 11in">5ft 11in - 180cm</option>
+                                    <option value="26-6ft">6ft - 182cm</option>
+                                    <option value="27-6ft 1in">6ft 1in - 185cm</option>
+                                    <option value="28-6ft 2in">6ft 2in - 187cm</option>
+                                    <option value="29-6ft 3in">6ft 3in - 190cm</option>
+                                    <option value="30-6ft 4in">6ft 4in - 193cm</option>
+                                    <option value="31-6ft 5in">6ft 5in - 195cm</option>
+                                    <option value="32-6ft 6in">6ft 6in - 198cm</option>
+                                    <option value="33-6ft 7in">6ft 7in - 200cm</option>
+                                    <option value="34-6ft 8in">6ft 8in - 203cm</option>
+                                    <option value="35-6ft 9in">6ft 9in - 205cm</option>
+                                    <option value="36-6ft 10in">6ft 10in - 208cm</option>
+                                    <option value="37-6ft 11in">6ft 11in - 210cm</option>
+                                    <option value="38-7ft">7ft - 213cm</option>
                                     </select>
                                 </td>
                                 <td>
@@ -737,107 +736,107 @@ const RegisterVaran = () => {
                                 <td align="left">
                                     <select name="ddlWeight" id="ddlWeight" class="dd_NoWidth"
                                         onChange={handleChange}>
-                                    <option value="0"> எடை - Kgs -</option>
-                                    <option value="41">41 kg</option>
-                                    <option value="42">42 kg</option>
-                                    <option value="43">43 kg</option>
-                                    <option value="44">44 kg</option>
-                                    <option value="45">45 kg</option>
-                                    <option value="46">46 kg</option>
-                                    <option value="47">47 kg</option>
-                                    <option value="48">48 kg</option>
-                                    <option value="49">49 kg</option>
-                                    <option value="50">50 kg</option>
-                                    <option value="51">51 kg</option>
-                                    <option value="52">52 kg</option>
-                                    <option value="53">53 kg</option>
-                                    <option value="54">54 kg</option>
-                                    <option value="55">55 kg</option>
-                                    <option value="56">56 kg</option>
-                                    <option value="57">57 kg</option>
-                                    <option value="58">58 kg</option>
-                                    <option value="59">59 kg</option>
-                                    <option value="60">60 kg</option>
-                                    <option value="61">61 kg</option>
-                                    <option value="62">62 kg</option>
-                                    <option value="63">63 kg</option>
-                                    <option value="64">64 kg</option>
-                                    <option value="65">65 kg</option>
-                                    <option value="66">66 kg</option>
-                                    <option value="67">67 kg</option>
-                                    <option value="68">68 kg</option>
-                                    <option value="69">69 kg</option>
-                                    <option value="70">70 kg</option>
-                                    <option value="71">71 kg</option>
-                                    <option value="72">72 kg</option>
-                                    <option value="73">73 kg</option>
-                                    <option value="74">74 kg</option>
-                                    <option value="75">75 kg</option>
-                                    <option value="76">76 kg</option>
-                                    <option value="77">77 kg</option>
-                                    <option value="78">78 kg</option>
-                                    <option value="79">79 kg</option>
-                                    <option value="80">80 kg</option>
-                                    <option value="81">81 kg</option>
-                                    <option value="82">82 kg</option>
-                                    <option value="83">83 kg</option>
-                                    <option value="84">84 kg</option>
-                                    <option value="85">85 kg</option>
-                                    <option value="86">86 kg</option>
-                                    <option value="87">87 kg</option>
-                                    <option value="88">88 kg</option>
-                                    <option value="89">89 kg</option>
-                                    <option value="90">90 kg</option>
-                                    <option value="91">91 kg</option>
-                                    <option value="92">92 kg</option>
-                                    <option value="93">93 kg</option>
-                                    <option value="94">94 kg</option>
-                                    <option value="95">95 kg</option>
-                                    <option value="96">96 kg</option>
-                                    <option value="97">97 kg</option>
-                                    <option value="98">98 kg</option>
-                                    <option value="99">99 kg</option>
-                                    <option value="100">100 kg</option>
-                                    <option value="101">101 kg</option>
-                                    <option value="102">102 kg</option>
-                                    <option value="103">103 kg</option>
-                                    <option value="104">104 kg</option>
-                                    <option value="105">105 kg</option>
-                                    <option value="106">106 kg</option>
-                                    <option value="107">107 kg</option>
-                                    <option value="108">108 kg</option>
-                                    <option value="109">109 kg</option>
-                                    <option value="110">110 kg</option>
-                                    <option value="111">111 kg</option>
-                                    <option value="112">112 kg</option>
-                                    <option value="113">113 kg</option>
-                                    <option value="114">114 kg</option>
-                                    <option value="115">115 kg</option>
-                                    <option value="116">116 kg</option>
-                                    <option value="117">117 kg</option>
-                                    <option value="118">118 kg</option>
-                                    <option value="119">119 kg</option>
-                                    <option value="120">120 kg</option>
-                                    <option value="121">121 kg</option>
-                                    <option value="122">122 kg</option>
-                                    <option value="123">123 kg</option>
-                                    <option value="124">124 kg</option>
-                                    <option value="125">125 kg</option>
-                                    <option value="126">126 kg</option>
-                                    <option value="127">127 kg</option>
-                                    <option value="128">128 kg</option>
-                                    <option value="129">129 kg</option>
-                                    <option value="130">130 kg</option>
-                                    <option value="131">131 kg</option>
-                                    <option value="132">132 kg</option>
-                                    <option value="133">133 kg</option>
-                                    <option value="134">134 kg</option>
-                                    <option value="135">135 kg</option>
-                                    <option value="136">136 kg</option>
-                                    <option value="137">137 kg</option>
-                                    <option value="138">138 kg</option> 
-                                    <option value="139">139 kg</option>
-                                    <option value="140">140 kg</option>
+                                    <option value="0-எடை Kgs"> எடை - Kgs -</option>
+                                    <option value="1-41 kg">41 kg</option>
+                                    <option value="2-42 kg">42 kg</option>
+                                    <option value="3-43 kg">43 kg</option>
+                                    <option value="4-44 kg">44 kg</option>
+                                    <option value="5-45 kg">45 kg</option>
+                                    <option value="6-46 kg">46 kg</option>
+                                    <option value="7-47 kg">47 kg</option>
+                                    <option value="8-48 kg">48 kg</option>
+                                    <option value="9-49 kg">49 kg</option>
+                                    <option value="10-50 kg">50 kg</option>
+                                    <option value="11-51 kg">51 kg</option>
+                                    <option value="12-52 kg">52 kg</option>
+                                    <option value="13-53 kg">53 kg</option>
+                                    <option value="14-54 kg">54 kg</option>
+                                    <option value="15-55 kg">55 kg</option>
+                                    <option value="16-56 kg">56 kg</option>
+                                    <option value="17-57 kg">57 kg</option>
+                                    <option value="18-58 kg">58 kg</option>
+                                    <option value="19-59 kg">59 kg</option>
+                                    <option value="20-60 kg">60 kg</option>
+                                    <option value="21-61 kg">61 kg</option>
+                                    <option value="22-62 kg">62 kg</option>
+                                    <option value="23-63 kg">63 kg</option>
+                                    <option value="24-64 kg">64 kg</option>
+                                    <option value="25-65 kg">65 kg</option>
+                                    <option value="26-66 kg">66 kg</option>
+                                    <option value="27-67 kg">67 kg</option>
+                                    <option value="28-68 kg">68 kg</option>
+                                    <option value="29-69 kg">69 kg</option>
+                                    <option value="30-70 kg">70 kg</option>
+                                    <option value="31-71 kg">71 kg</option>
+                                    <option value="32-72 kg">72 kg</option>
+                                    <option value="33-73 kg">73 kg</option>
+                                    <option value="34-74 kg">74 kg</option>
+                                    <option value="35-75 kg">75 kg</option>
+                                    <option value="36-76 kg">76 kg</option>
+                                    <option value="37-77 kg">77 kg</option>
+                                    <option value="38-78 kg">78 kg</option>
+                                    <option value="39-79 kg">79 kg</option>
+                                    <option value="40-80 kg">80 kg</option>
+                                    <option value="41-81 kg">81 kg</option>
+                                    <option value="42-82 kg">82 kg</option>
+                                    <option value="43-83 kg">83 kg</option>
+                                    <option value="44-84 kg">84 kg</option>
+                                    <option value="45-85 kg">85 kg</option>
+                                    <option value="46-86 kg">86 kg</option>
+                                    <option value="47-87 kg">87 kg</option>
+                                    <option value="48-88 kg">88 kg</option>
+                                    <option value="49-89 kg">89 kg</option>
+                                    <option value="50-90 kg">90 kg</option>
+                                    <option value="51-91 kg">91 kg</option>
+                                    <option value="52-92 kg">92 kg</option>
+                                    <option value="53-93 kg">93 kg</option>
+                                    <option value="54-94 kg">94 kg</option>
+                                    <option value="55-95 kg">95 kg</option>
+                                    <option value="56-96 kg">96 kg</option>
+                                    <option value="57-97 kg">97 kg</option>
+                                    <option value="58-98 kg">98 kg</option>
+                                    <option value="59-99 kg">99 kg</option>
+                                    <option value="60-100 kg">100 kg</option>
+                                    <option value="61-101 kg">101 kg</option>
+                                    <option value="62-102 kg">102 kg</option>
+                                    <option value="63-103 kg">103 kg</option>
+                                    <option value="64-104 kg">104 kg</option>
+                                    <option value="65-105 kg">105 kg</option>
+                                    <option value="66-106 kg">106 kg</option>
+                                    <option value="67-107 kg">107 kg</option>
+                                    <option value="68-108 kg">108 kg</option>
+                                    <option value="69-109 kg">109 kg</option>
+                                    <option value="70-110 kg">110 kg</option>
+                                    <option value="71-111 kg">111 kg</option>
+                                    <option value="72-112 kg">112 kg</option>
+                                    <option value="73-113 kg">113 kg</option>
+                                    <option value="74-114 kg">114 kg</option>
+                                    <option value="75-115 kg">115 kg</option>
+                                    <option value="76-116 kg">116 kg</option>
+                                    <option value="77-117 kg">117 kg</option>
+                                    <option value="78-118 kg">118 kg</option>
+                                    <option value="79-119 kg">119 kg</option>
+                                    <option value="80-120 kg">120 kg</option>
+                                    <option value="81-121 kg">121 kg</option>
+                                    <option value="82-122 kg">122 kg</option>
+                                    <option value="83-123 kg">123 kg</option>
+                                    <option value="84-124 kg">124 kg</option>
+                                    <option value="85-125 kg">125 kg</option>
+                                    <option value="86-126 kg">126 kg</option>
+                                    <option value="87-127 kg">127 kg</option>
+                                    <option value="88-128 kg">128 kg</option>
+                                    <option value="89-129 kg">129 kg</option>
+                                    <option value="90-130 kg">130 kg</option>
+                                    <option value="91-131 kg">131 kg</option>
+                                    <option value="92-132 kg">132 kg</option>
+                                    <option value="93-133 kg">133 kg</option>
+                                    <option value="94-134 kg">134 kg</option>
+                                    <option value="95-135 kg">135 kg</option>
+                                    <option value="96-136 kg">136 kg</option>
+                                    <option value="97-137 kg">137 kg</option>
+                                    <option value="98-138 kg">138 kg</option> 
+                                    <option value="99-139 kg">139 kg</option>
+                                    <option value="100-140 kg">140 kg</option>
                                     </select>
                                 </td>
                                 <td align="right" class="Label">
@@ -846,15 +845,15 @@ const RegisterVaran = () => {
                                 <td  align="left">
                                     <select name="ddlBloodGroup" id="ddlBloodGroup" class="dd_NoWidth"
                                         onChange={handleChange}>
-                                    <option value="0-0">-Select- குருதி வகை</option>
-                                    <option value="1-O+">O+</option>
-                                    <option value="2-A+">A+</option>
-                                    <option value="3-B+">B+</option>
-                                    <option value="4-AB+">AB+</option>
-                                    <option value="5-O-">O-</option>
-                                    <option value="6-A-">A-</option>
-                                    <option value="7-B-">B-</option>
-                                    <option value="8-AB-">AB-</option>
+                                    <option value="0-Select_குருதி வகை">-Select- குருதி வகை</option>
+                                    <option value="1-O Positive">O Positive</option>
+                                    <option value="2-A Positive">A Positive</option>
+                                    <option value="3-B Positive">B Positive</option>
+                                    <option value="4-AB Positive">AB Positive</option>
+                                    <option value="5-O Negative">ONegative</option>
+                                    <option value="6-A Negative">A Negative</option>
+                                    <option value="7-B Negative">B Negative</option>
+                                    <option value="8-AB Negative">AB Negative</option>
                                     </select>
                                 </td>
                                 </tr>
@@ -865,7 +864,7 @@ const RegisterVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlDiet" id="ddlDiet" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">உணவு விபரம்</option>
+                                            <option value="0-உணவு விபரம்" selected="selected">உணவு விபரம்</option>
                                             <option value="1-Vegetarian">Vegetarian</option>
                                             <option value="2-NonVegetarian">Non-Vegetarian</option>
                                             <option value="3-Eggetarian">Eggetarian</option>
@@ -876,12 +875,12 @@ const RegisterVaran = () => {
                                     </td>
                                     <td>                    
                                         <select name="ddlPhysicalStatus" id="ddlPhysicalStatus" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">ஊனம்</option>
+                                            <option value="0-ஊனம்" selected="selected">ஊனம்</option>
                                             <option value="1-Normal" checked="checked" >No-இல்லை</option>
-                                            <option  value="2-PhysicallyChallenged" >Yes-ஆம்</option>    
-                                            <option  value="3-EyeBlindness" >EyeBlindness -பார்வை குறை</option>       
-                                            <option  value="4-Deaf" >Deaf -காது கேளாமை</option> 
-                                            <option  value="5-Dump" >Dump -பேச்சு குறைப்பாடு</option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                            <option value="2-PhysicallyChallenged" >Yes-ஆம்</option>    
+                                            <option value="3-EyeBlindness" >EyeBlindness -பார்வை குறை</option>       
+                                            <option value="4-Deaf" >Deaf -காது கேளாமை</option> 
+                                            <option value="5-Dump" >Dump -பேச்சு குறைப்பாடு</option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                                         </select>    
                                     </td>
                                     <td align="left" class="Label">
@@ -889,7 +888,7 @@ const RegisterVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlComplexion" id="ddlComplexion" onChange={handleChange}>
-                                            <option value="0-0">-Select- உடல் நிறம்</option>
+                                            <option value="0-Select_உடல் நிறம்">-Select- உடல் நிறம்</option>
                                             <option value="1-VeryFair" >Very Fair</option>
                                             <option value="2-Fair" >Fair</option>
                                             <option value="3-Wheatish" >Wheatish</option>
@@ -1008,7 +1007,7 @@ const RegisterVaran = () => {
                                             class="TextBox"
                                             onChange={handleChange}
                                             >
-                                                <option value="0">அலுவலகம்</option>
+                                                <option value="0-அலுவலகம்">அலுவலகம்</option>
                                                 <option value="9-Own Business">Own Business</option>
                                                 <option value="1-MNC">MNC</option>
                                                 <option value="2-Pvt. Ltd">Pvt. Ltd</option>
@@ -1034,9 +1033,9 @@ const RegisterVaran = () => {
                                     <td> 
                                         <select name="ddlCaste"  id="ddlCaste" class="dd_NoWidth" 
                                             onChange={handleChange} >
-                                            <option selected="selected" value="0-0">Select - ஜாதி</option>
+                                            <option selected="selected" value="0-Select_ஜாதி">Select - ஜாதி</option>
                                             <option value="1-Any">Any</option>
-                                            <option value="2-Nayudu">Nayudu</option>
+                                            <option value="2-Naidu">Naidu</option>
                                             <option value="3-Vanniyar">Vanniyar</option>
                                             <option value="4-Chettiyar">Chettiyar</option>
                                             <option value="5-Mudhalaiyar">Mudhalaiyar</option>
@@ -1079,7 +1078,7 @@ const RegisterVaran = () => {
                                     <td>
                                     <select name="ddlStar" id="ddlStar" class="dd_NoWidth"
                                          onChange={handleChange}>
-                                        <option value="0-0">-- Select Star --</option>
+                                        <option value="0-Select Star">-- Select Star --</option>
                                         <option value="1-அசுவினி">ASWINI-அசுவினி</option>
                                         <option value="2-பரணி">BARANI-பரணி</option>
                                         <option value="3-கிருத்திகை">KRITHIGAI-கிருத்திகை</option>
@@ -1117,7 +1116,7 @@ const RegisterVaran = () => {
                                     <td>
                                         <select name="ddlRaasiSign" id="ddlRaasiSign" class="dd_NoWidth"
                                           onChange={handleChange}>
-                                            <option value="0-0">-- Select Rasi --</option>
+                                            <option value="0-Select Rasi">-- Select Rasi --</option>
                                             <option value="1-மேஷம்">MESHAM-மேஷம்</option>
                                             <option value="2-ரிஷபம்">RISHABAM-ரிஷபம்</option>
                                             <option value="3-மிதுனம்">MITHUNAM-மிதுனம்</option>
@@ -1142,11 +1141,11 @@ const RegisterVaran = () => {
                                                 <td align="left" class="Label">
                                                     <select name="ddlLaknamNo" id="ddlLaknamNo" class="dd_NoWidth"
                                                         onChange={handleChange}>
-                                                        <option value="0">-Select Padam--</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
+                                                        <option value="0-Select Padam பாதம்">-Select Padam பாதம்--</option>
+                                                        <option value="1-1">1</option>
+                                                        <option value="2-2">2</option>
+                                                        <option value="3-3">3</option>
+                                                        <option value="4-4">4</option>
                                                     </select>                                                                        </td>
                                             </tr>
                                         </table>
@@ -1164,7 +1163,7 @@ const RegisterVaran = () => {
                                                 <td align="left">
                                                     <select name="ddlLaknam" id="ddlLaknam" class="dd_NoWidth"
                                                         onChange={handleChange}>
-                                                    <option value="0-0">-Select Laknam --</option>
+                                                    <option value="0-Select Laknam">-Select Laknam --</option>
                                                     <option value="1-மேஷம்">MESHAM-மேஷம்</option>
                                                     <option value="2-ரிஷபம்">RISHABAM-ரிஷபம்</option>
                                                     <option value="3-மிதுனம்">MITHUNAM-மிதுனம்</option>
@@ -1717,75 +1716,75 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                 <select name="ddlPreferredAgeFrom" id="ddlPreferredAgeFrom" class="dd_NoWidth" onChange={handleChange}>
-                                    <option value="0">Select - வயது முதல்</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                    <option value="32">32</option>
-                                    <option value="33">33</option>
-                                    <option value="34">34</option>
-                                    <option value="35">35</option>
-                                    <option value="36">36</option>
-                                    <option value="37">37</option>
-                                    <option value="38">38</option>
-                                    <option value="39">39</option>
-                                    <option value="40">40</option>
-                                    <option value="41">41</option>
-                                    <option value="42">42</option>
-                                    <option value="43">43</option>
-                                    <option value="44">44</option>
-                                    <option value="45">45</option>
-                                    <option value="46">46</option>
-                                    <option value="47">47</option>
-                                    <option value="48">48</option>
-                                    <option value="49">49</option>
-                                    <option value="50">50</option>
+                                    <option value="0-Select வயது முதல்">Select - வயது முதல்</option>
+                                    <option value="1-19">19</option>
+                                    <option value="2-20">20</option>
+                                    <option value="3-21">21</option>
+                                    <option value="4-22">22</option>
+                                    <option value="5-23">23</option>
+                                    <option value="6-24">24</option>
+                                    <option value="7-25">25</option>
+                                    <option value="8-26">26</option>
+                                    <option value="9-27">27</option>
+                                    <option value="10-28">28</option>
+                                    <option value="11-29">29</option>
+                                    <option value="12-30">30</option>
+                                    <option value="13-31">31</option>
+                                    <option value="14-32">32</option>
+                                    <option value="15-33">33</option>
+                                    <option value="16-34">34</option>
+                                    <option value="17-35">35</option>
+                                    <option value="18-36">36</option>
+                                    <option value="19-37">37</option>
+                                    <option value="20-38">38</option>
+                                    <option value="21-39">39</option>
+                                    <option value="22-40">40</option>
+                                    <option value="23-41">41</option>
+                                    <option value="24-42">42</option>
+                                    <option value="25-43">43</option>
+                                    <option value="26-44">44</option>
+                                    <option value="27-45">45</option>
+                                    <option value="28-46">46</option>
+                                    <option value="29-47">47</option>
+                                    <option value="30-48">48</option>
+                                    <option value="31-49">49</option>
+                                    <option value="32-50">50</option>
                                 </select>
                                     To
                                 <select name="ddlPreferredAgeTo" id="ddlPreferredAgeTo" class="dd_NoWidth" onChange={handleChange}>
-                                        <option value="0">Select - வயது வரை</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                        <option value="32">32</option>
-                                        <option value="33">33</option>
-                                        <option value="34">34</option>
-                                        <option value="35">35</option>
-                                        <option value="36">36</option>
-                                        <option value="37">37</option>
-                                        <option value="38">38</option>
-                                        <option value="39">39</option>
-                                        <option value="40">40</option>
-                                        <option value="41">41</option>
-                                        <option value="42">42</option>
-                                        <option value="43">43</option>
-                                        <option value="44">44</option>
-                                        <option value="45">45</option>
-                                        <option value="46">46</option>
-                                        <option value="47">47</option>
-                                        <option value="48">48</option>
-                                        <option value="49">49</option>
-                                        <option value="50">50</option>
+                                        <option value="0-வயது வரை">Select - வயது வரை</option>
+                                        <option value="1-19">19</option>
+                                        <option value="2-20">20</option>
+                                        <option value="3-21">21</option>
+                                        <option value="4-22">22</option>
+                                        <option value="5-23">23</option>
+                                        <option value="6-24">24</option>
+                                        <option value="7-25">25</option>
+                                        <option value="8-26">26</option>
+                                        <option value="9-27">27</option>
+                                        <option value="10-28">28</option>
+                                        <option value="11-29">29</option>
+                                        <option value="12-30">30</option>
+                                        <option value="13-31">31</option>
+                                        <option value="14-32">32</option>
+                                        <option value="15-33">33</option>
+                                        <option value="16-34">34</option>
+                                        <option value="17-35">35</option>
+                                        <option value="18-36">36</option>
+                                        <option value="19-37">37</option>
+                                        <option value="20-38">38</option>
+                                        <option value="21-39">39</option>
+                                        <option value="22-40">40</option>
+                                        <option value="23-41">41</option>
+                                        <option value="24-42">42</option>
+                                        <option value="25-43">43</option>
+                                        <option value="26-44">44</option>
+                                        <option value="27-45">45</option>
+                                        <option value="28-46">46</option>
+                                        <option value="29-47">47</option>
+                                        <option value="30-48">48</option>
+                                        <option value="31-49">49</option>
+                                        <option value="32-50">50</option>
                                       </select>
                                 </td>
                                 <td>
@@ -1801,7 +1800,7 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left">
                                  <select name="ddlExpDiet" id="ddlExpDiet" onChange={handleChange}>
-                                    <option value="0-NoAnswer">உணவு பிரிவு</option>
+                                    <option value="0-உணவு பிரிவு">உணவு பிரிவு</option>
                                     <option value="1-Vegetarian">Vegetarian</option>
                                     <option value="2-NonVegetarian">Non-Vegetarian</option>
                                     <option value="3-Eggetarian">Eggetarian</option>
@@ -1813,7 +1812,7 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                 <select name="ddlExpHoroscope" id="ddlExpHoroscope" onChange={handleChange}>
-                                <option value="0-No_Answer">ஜாதகம் கட்டாயமா</option>
+                                <option value="0-ஜாதகம் கட்டாயமா">ஜாதகம் கட்டாயமா</option>
                                 <option value="1-Yes">Yes</option>
                                 <option value="2-No">No</option>
                                 </select>    
@@ -1823,7 +1822,7 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                     <select name="ddlExpMartialStatus" id="ddlExpMartialStatus" onChange={handleChange}>
-                                        <option value="0-0">திருமணம் குறித்து</option>
+                                        <option value="0-திருமணம் குறித்து">திருமணம் குறித்து</option>
                                         <option value="1-Unmarried">Unmarried</option>
                                         <option value="2-Married">Married</option>
                                         <option value="3-Widow">Widow/Widower</option>
@@ -1837,7 +1836,7 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left">
                                 <select name="ddlExpCaste"  id="ddlExpCaste" class="dd_NoWidth" onChange={handleChange}>
-                                <option selected="selected" value="0-0">Select - ஜாதி</option>
+                                <option selected="selected" value="0-Select ஜாதி">Select - ஜாதி</option>
                                 <option value="1-Any">Any</option>
                                 <option value="2-Naidu">Naidu</option>
                                 <option value="2-Nayudu">Nayudu</option>
@@ -1855,9 +1854,9 @@ const RegisterVaran = () => {
                             </td>
                             <td align="left">
                                     <select name="ddlExpSubCaste" id="ddlExpSubCaste" class="dd_NoWidth" onChange={handleChange}>
-                                    <option selected="selected" value="0">select - உட்பிரிவு</option>
-                                    <option value="1">Any</option>
-                                    <option value="Others">Others</option>
+                                    <option selected="selected" value="0-select உட்பிரிவு">select - உட்பிரிவு</option>
+                                    <option value="1-Any">Any</option>
+                                    <option value="2-Others">Others</option>
                                     </select>                                                        
                             </td>
                             <td align="left">
@@ -1920,11 +1919,12 @@ const RegisterVaran = () => {
                                 id="ddlModeOfPayment"
                                 onChange={handleChange}
                                 >
-                            <option value="">பணம் செலுத்தும் முறை</option>
-                            <option value="cash">CASH</option>
-                            <option value="cheque">CHEQUE</option>
-                            <option value="Google Pay">GOOGLE PAY</option>
-                            <option value="Phone Pay">Phone Pe</option>
+                            <option value="0-பணம் செலுத்தும் முறை">பணம் செலுத்தும் முறை</option>
+                            <option value="1-Cash">CASH</option>
+                            <option value="2-Cheque">CHEQUE</option>
+                            <option value="3-Google Pay">GOOGLE PAY</option>
+                            <option value="4-Phone Pay">Phone Pe</option>
+                            <option value="5-Bharat Pay">Phone Pe</option>
                             </select>
                         </div>
                         <div className="col-2">
@@ -1945,15 +1945,16 @@ const RegisterVaran = () => {
                             <b>Scheme</b>
                             </label>
                             <select name="ddlScheme" id="ddlScheme" className="form-input" onChange={handleChange}>
-                                <option value="normal" selected>Normal</option>
-                                <option value="premium">Premium</option>
+                                <option value="0-Scheme" selected>Scheme</option>
+                                <option value="1-Normal">Normal</option>
+                                <option value="2-Premium">Premium</option>
                             </select>
                         </div>
                         </div>
                         <div className="row">
                         <div className="col-12 d-flex justify-content-end">
-                            <button className="btn btn-primary" type="submit">
-                            {isUpdate ? "UPDATE":"SUBMIT"}
+                            <button className="btn btn-primary" type="submit" value="Register Varan">
+                            {isUpdate ? "UPDATE":"SUBMIT (Register Varan)"}
                             </button>
                         </div>
                         </div>

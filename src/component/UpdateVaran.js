@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 const UpdateVaran = () => {
-    const [isUpdate, setIsUpdating] = useState(false);
+    const [isUpdate, setIsUpdating] = useState(true);
     const { state } = useLocation();
     const navigate = useNavigate();
     const {id} = useParams();
@@ -1086,7 +1086,7 @@ const UpdateVaran = () => {
                                             class="TextBox"
                                             onChange={handleChange}
                                             >
-                                                <option value="0-பட்டபடிப்பு">பட்டபடிப்பு</option>
+                                                <option value="0-பட்டபடிப்பு">{formVarans.educationStr}</option>
                                                 <option value="1-PHD DOCTOR">PHD DOCTOR</option>
                                                 <option value="2-MASTER DEGREE">MASTER DEGREE</option>
                                                 <option value="3-BACHELOR DEGREE">BACHELOR DEGREE</option>
@@ -1109,6 +1109,7 @@ const UpdateVaran = () => {
                                             name="txtQualification"
                                             id="txtQualification"
                                             class="TextBox"
+                                            value={formVarans.qualification}
                                             onChange={handleChange}
                                             />
                                         </div>
@@ -1125,6 +1126,7 @@ const UpdateVaran = () => {
                                         name="txtJob"
                                         id="txtJob"
                                         class="TextBox"
+                                        value={formVarans.job}
                                         onChange={handleChange}
                                         />
                                     </div>
@@ -1143,6 +1145,7 @@ const UpdateVaran = () => {
                                         name="txtPlaceOfJob"
                                         id="txtPlaceOfJob"
                                         class="TextBox"
+                                        value={formVarans.placeOfJob}
                                         onChange={handleChange}
                                         />
                                     </div>
@@ -1159,6 +1162,7 @@ const UpdateVaran = () => {
                                             name="txtIncome"
                                             id="txtIncome"
                                             class="TextBox"
+                                            value={formVarans.income}
                                             onChange={handleChange}
                                         />
                                     </div>
@@ -1175,7 +1179,7 @@ const UpdateVaran = () => {
                                             class="TextBox"
                                             onChange={handleChange}
                                             >
-                                                <option value="0">அலுவலகம்</option>
+                                                <option value="0-0">{formVarans.office}</option>
                                                 <option value="9-Own Business">Own Business</option>
                                                 <option value="1-MNC">MNC</option>
                                                 <option value="2-Pvt. Ltd">Pvt. Ltd</option>
@@ -1201,7 +1205,7 @@ const UpdateVaran = () => {
                                     <td> 
                                         <select name="ddlCaste"  id="ddlCaste" class="dd_NoWidth" 
                                             onChange={handleChange} >
-                                            <option selected="selected" value="0-0">Select - ஜாதி</option>
+                                            <option selected="selected" value="0-0">{formVarans.casteStr}</option>
                                             <option value="1-Any">Any</option>
                                             <option value="2-Nayudu">Nayudu</option>
                                             <option value="3-Vanniyar">Vanniyar</option>
@@ -1218,7 +1222,7 @@ const UpdateVaran = () => {
                                     <td>
                                         <input type="text" name="ddlSubCaste" id="ddlSubCaste"
                                             placeholder="உட்பிரிவு" class="dd_NoWidth" 
-                                          onChange={handleChange}/>
+                                          onChange={handleChange} value={formVarans.subCaste}/>
                                     </td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -1227,7 +1231,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td >
                                         <input name="txtGothram" type="text" id="txtGothram" 
-                                            placeholder="கோத்திரம்" class="TextBox" 
+                                            placeholder="கோத்திரம்" class="TextBox" value={formVarans.gothram}
                                             onChange={handleChange}/>
                                     </td>
                                     <td>&nbsp;&nbsp;</td>
@@ -1246,7 +1250,7 @@ const UpdateVaran = () => {
                                     <td>
                                     <select name="ddlStar" id="ddlStar" class="dd_NoWidth"
                                          onChange={handleChange}>
-                                        <option value="0-0">-- Select Star --</option>
+                                        <option value="0-0">{formVarans.star}</option>
                                         <option value="1-அசுவினி">ASWINI-அசுவினி</option>
                                         <option value="2-பரணி">BARANI-பரணி</option>
                                         <option value="3-கிருத்திகை">KRITHIGAI-கிருத்திகை</option>
@@ -1284,7 +1288,7 @@ const UpdateVaran = () => {
                                     <td>
                                         <select name="ddlRaasiSign" id="ddlRaasiSign" class="dd_NoWidth"
                                           onChange={handleChange}>
-                                            <option value="0-0">-- Select Rasi --</option>
+                                            <option value="0-0">{formVarans.raasiTamil}</option>
                                             <option value="1-மேஷம்">MESHAM-மேஷம்</option>
                                             <option value="2-ரிஷபம்">RISHABAM-ரிஷபம்</option>
                                             <option value="3-மிதுனம்">MITHUNAM-மிதுனம்</option>
@@ -1309,7 +1313,7 @@ const UpdateVaran = () => {
                                                 <td align="left" class="Label">
                                                     <select name="ddlLaknamNo" id="ddlLaknamNo" class="dd_NoWidth"
                                                         onChange={handleChange}>
-                                                        <option value="0">-Select Padam--</option>
+                                                        <option value="0">{formVarans.laknamNo}</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -1331,7 +1335,7 @@ const UpdateVaran = () => {
                                                 <td align="left">
                                                     <select name="ddlLaknam" id="ddlLaknam" class="dd_NoWidth"
                                                         onChange={handleChange}>
-                                                    <option value="0-0">-Select Laknam --</option>
+                                                    <option value="0-0">{formVarans.laknamStr}</option>
                                                     <option value="1-மேஷம்">MESHAM-மேஷம்</option>
                                                     <option value="2-ரிஷபம்">RISHABAM-ரிஷபம்</option>
                                                     <option value="3-மிதுனம்">MITHUNAM-மிதுனம்</option>
@@ -1376,7 +1380,7 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="right">
                                                     <textarea name="txtPermanentAddress" rows="4" cols="50" id="txtPermanentAddress"
-                                                     class="TextBox" onChange={handleChange}
+                                                     class="TextBox" onChange={handleChange} value={formVarans.permanentAddress}
                                                         ></textarea>
                                                 </td>
                                             </tr>
@@ -1392,7 +1396,7 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="left">
                                                     <textarea name="txtPresentAddress" rows="4" cols="50" id="txtPresentAddress" 
-                                                        class="TextBox" onChange={handleChange}></textarea>
+                                                        class="TextBox" onChange={handleChange} value={formVarans.presentAddress}></textarea>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1407,7 +1411,7 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="left">
                                                     <textarea name="txtLandLineNumbers" rows="4" cols="50" id="txtLandLineNumbers" 
-                                                        class="TextBox" onChange={handleChange}></textarea>
+                                                        class="TextBox" onChange={handleChange} value={formVarans.landLineNumbers}></textarea>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1424,7 +1428,8 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="left">
                                                     <input name="txtContactPerson" type="text" id="txtContactPerson" size="40"
-                                                        onChange={handleChange} class="TextBox" placeholder="தொடர்பு கொள்ளவேண்டியவர்"/>
+                                                        onChange={handleChange} class="TextBox" placeholder="தொடர்பு கொள்ளவேண்டியவர்"
+                                                         value={formVarans.contactPerson}/>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1439,7 +1444,8 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="left">
                                                 <input name="txtMobileNo" type="text" id="txtMobileNo" size="30"
-                                                  onChange={handleChange} placeholder="மொபைல் எண்" class="TextBox"/>
+                                                  onChange={handleChange} placeholder="மொபைல் எண்" class="TextBox"
+                                                   value={formVarans.mobileNo}/>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1454,7 +1460,8 @@ const UpdateVaran = () => {
                                             <tr>
                                                 <td align="left">
                                                 <input name="txtEmail" type="text" id="txtEmail" size="30"
-                                                  onChange={handleChange} placeholder="மின்னஞ்சல்" class="TextBox"/>
+                                                  onChange={handleChange} 
+                                                  value={formVarans.email} placeholder="மின்னஞ்சல்" class="TextBox"/>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1484,13 +1491,16 @@ const UpdateVaran = () => {
                                                             <tr>
                                                                 <td align="center" class="Label">
                                                                     <b>Balance </b>: &nbsp;&nbsp;
-                                                                    <input name="txtDasa" type="text" id="txtDasa" 
+                                                                    <input name="txtDasa" type="text" id="txtDasa" value={formVarans.dasa}
                                                                         onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Dasa</b> &nbsp;&nbsp;<input name="txtDasaYears" type="text" id="txtDasaYears" 
+                                                                    <b>Dasa</b> &nbsp;&nbsp;
+                                                                    <input name="txtDasaYears" type="text" id="txtDasaYears" value={formVarans.dasaYears} 
                                                                         onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Year(s) </b>&nbsp;&nbsp;<input name="txtDasaMonths" type="text" id="txtDasaMonths" 
+                                                                    <b>Year(s) </b>&nbsp;&nbsp;
+                                                                    <input name="txtDasaMonths" type="text" id="txtDasaMonths" value={formVarans.dasaMonths} 
                                                                         onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Month(s)</b> &nbsp;&nbsp;<input name="txtDasaDays" type="text" id="txtDasaDays" 
+                                                                    <b>Month(s)</b> &nbsp;&nbsp;
+                                                                    <input name="txtDasaDays" type="text" id="txtDasaDays" value={formVarans.dasaDays} 
                                                                         onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
                                                                     <b>Day(s)</b>
                                                                 </td>
@@ -1839,7 +1849,7 @@ const UpdateVaran = () => {
                                 class="TextBox"
                                 onChange={handleChange}
                                 >
-                                    <option value="0-பட்டபடிப்பு">பட்டபடிப்பு</option>
+                                    <option value="0-0">{formVarans.expEducationStr}</option>
                                     <option value="1-PHD DOCTOR">PHD DOCTOR</option>
                                     <option value="2-MASTER DEGREE">MASTER DEGREE</option>
                                     <option value="3-BACHELOR DEGREE">BACHELOR DEGREE</option>
@@ -1849,22 +1859,22 @@ const UpdateVaran = () => {
                                     <option value="7-SSLC">10 - SSLC</option>
                                 </select>
                                 <input name="txtExpQualification" type="text" id="txtExpQualification" 
-                                placeholder="கல்வி தகுதி"
+                                placeholder="கல்வி தகுதி" value={formVarans.expQualification}
                                 onChange={handleChange}  class="TextBox" />
                             </td>
                             <td align="right" class="Label">
                                 <b>Job</b> :
                             </td>
                             <td align="left">
-                                <input name="txtExpJob" type="text" id="txtExpJob" 
+                                <input name="txtExpJob" type="text" id="txtExpJob" value={formVarans.expJob}
                                 placeholder="வேலை" onChange={handleChange}  class="TextBox" />
                             </td>
                             <td align="left" class="Label">
-                                <b>Job Going </b>:
+                                <b>Job Going - வேலை கட்டாயமா?</b>:
                             </td>
                             <td align="left">
                                 <select name="ddlExpJob" id="ddlExpJob" onChange={handleChange} >  
-                                    <option value="0-பதிலில்லை">வேலை கட்டாயமா?</option>
+                                    <option value="0-0">{formVarans.expJobMustStr}</option>
                                     <option value="1-Must">Must-கட்டாயம்</option>
                                     <option value="2-Optional">Optional-பரவாயில்லை</option>
                                     <option value="3-Required">Not required-வேண்டாம்</option>
@@ -1876,7 +1886,7 @@ const UpdateVaran = () => {
                                 <b>Income Per Month </b>:
                             </td>
                             <td >
-                                <input name="txtExpIncome" type="text" id="txtExpIncome" 
+                                <input name="txtExpIncome" type="text" id="txtExpIncome" value={formVarans.expIncome}
                                 placeholder="மாத வருமானம்" class="TextBox" onChange={handleChange} />
                             </td>
                             <td  align="right">
@@ -1884,7 +1894,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                 <select name="ddlPreferredAgeFrom" id="ddlPreferredAgeFrom" class="dd_NoWidth" onChange={handleChange}>
-                                    <option value="0">Select - வயது முதல்</option>
+                                    <option value="0-0">{formVarans.preferredAgeFrom}</option>
                                     <option value="19">19</option>
                                     <option value="20">20</option>
                                     <option value="21">21</option>
@@ -1920,7 +1930,7 @@ const UpdateVaran = () => {
                                 </select>
                                     To
                                 <select name="ddlPreferredAgeTo" id="ddlPreferredAgeTo" class="dd_NoWidth" onChange={handleChange}>
-                                        <option value="0">Select - வயது வரை</option>
+                                        <option value="0">{formVarans.preferredAgeTo}</option>
                                         <option value="19">19</option>
                                         <option value="20">20</option>
                                         <option value="21">21</option>
@@ -1959,7 +1969,7 @@ const UpdateVaran = () => {
                                     <b>Preferred Job Location</b>
                                 </td>
                                 <td>
-                                    <input name="txtExpPlaceOfJob" type="text" id="txtExpPlaceOfJob" 
+                                    <input name="txtExpPlaceOfJob" type="text" id="txtExpPlaceOfJob" value={formVarans.expPlaceOfJob} 
                                     placeholder="வேலை பார்க்கும் இடம்" class="TextBox" onChange={handleChange} />
                                 </td>
                             </tr>
@@ -1968,7 +1978,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left">
                                  <select name="ddlExpDiet" id="ddlExpDiet" onChange={handleChange}>
-                                    <option value="0-NoAnswer">உணவு பிரிவு</option>
+                                    <option value="0-NoAnswer">{formVarans.expDietStr}</option>
                                     <option value="1-Vegetarian">Vegetarian</option>
                                     <option value="2-NonVegetarian">Non-Vegetarian</option>
                                     <option value="3-Eggetarian">Eggetarian</option>
@@ -1976,11 +1986,11 @@ const UpdateVaran = () => {
                                 </select>
                             </td>
                             <td align="right">
-                            <b>Horoscope Required </b>:
+                            <b>Horoscope Required - ஜாதகம் கட்டாயமா</b>:
                             </td>
                             <td align="left" class="Label">
                                 <select name="ddlExpHoroscope" id="ddlExpHoroscope" onChange={handleChange}>
-                                <option value="0-No_Answer">ஜாதகம் கட்டாயமா</option>
+                                <option value="0-0">{formVarans.expHoroscopeStr}</option>
                                 <option value="1-Yes">Yes</option>
                                 <option value="2-No">No</option>
                                 </select>    
@@ -1990,7 +2000,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                     <select name="ddlExpMartialStatus" id="ddlExpMartialStatus" onChange={handleChange}>
-                                        <option value="0-0">திருமணம் குறித்து</option>
+                                        <option value="0-0">{formVarans.expMartialStatusStr}</option>
                                         <option value="1-Unmarried">Unmarried</option>
                                         <option value="2-Married">Married</option>
                                         <option value="3-Widow">Widow/Widower</option>
@@ -2004,7 +2014,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left">
                                 <select name="ddlExpCaste"  id="ddlExpCaste" class="dd_NoWidth" onChange={handleChange}>
-                                <option selected="selected" value="0-0">Select - ஜாதி</option>
+                                <option selected="selected" value="0-0">{formVarans.expCasteStr}</option>
                                 <option value="1-Any">Any</option>
                                 <option value="2-Naidu">Naidu</option>
                                 <option value="2-Nayudu">Nayudu</option>
@@ -2022,9 +2032,9 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left">
                                     <select name="ddlExpSubCaste" id="ddlExpSubCaste" class="dd_NoWidth" onChange={handleChange}>
-                                    <option selected="selected" value="0">select - உட்பிரிவு</option>
-                                    <option value="1">Any</option>
-                                    <option value="Others">Others</option>
+                                    <option selected="selected" value="0">{formVarans.expSubCaste}</option>
+                                    <option value="1-Any">Any</option>
+                                    <option value="2-Others">Others</option>
                                     </select>                                                        
                             </td>
                             <td align="left">
@@ -2040,7 +2050,7 @@ const UpdateVaran = () => {
                              </td>
                              <td align="left" valign="middle" colSpan={1}>
                                 <textarea name="txtOtherComments" rows="4" cols="40" onChange={handleChange}
-                                    id="txtOtherComments" class="TextBox"></textarea>
+                                    id="txtOtherComments" class="TextBox" value={formVarans.otherComments}></textarea>
                             </td>
                         </tr>
                         </table>
@@ -2060,7 +2070,7 @@ const UpdateVaran = () => {
                             className="form-input"
                             name="txtAmount"
                             id="txtAmount"
-                            value="1000"
+                            value={formVarans.amount}
                             onChange={handleChange}
                             />
                         </div>
@@ -2070,10 +2080,11 @@ const UpdateVaran = () => {
                             <b>Amount Paid Date</b>
                             </label>
                             <input
-                                type="date"
+                                type="text"
                                 className="form-input"
                                 name="txtTransactionDate"
                                 id="txtTransactionDate"
+                                value={formVarans.transactionDate}
                                 onChange={handleChange}
                             />
                         </div>
@@ -2085,13 +2096,14 @@ const UpdateVaran = () => {
                                 className="form-input"
                                 name="ddlModeOfPayment"
                                 id="ddlModeOfPayment"
+                                value={formVarans.modeOfPayment}
                                 onChange={handleChange}
                                 >
-                            <option value="">பணம் செலுத்தும் முறை</option>
-                            <option value="cash">CASH</option>
-                            <option value="cheque">CHEQUE</option>
-                            <option value="Google Pay">GOOGLE PAY</option>
-                            <option value="Phone Pay">Phone Pe</option>
+                            <option value="0-0">{formVarans.modeOfPayment}</option>
+                            <option value="1-cash">CASH</option>
+                            <option value="2-cheque">CHEQUE</option>
+                            <option value="3-Google Pay">GOOGLE PAY</option>
+                            <option value="4-Phone Pay">Phone Pe</option>
                             </select>
                         </div>
                         <div className="col-2">
@@ -2104,6 +2116,7 @@ const UpdateVaran = () => {
                             name="txtReference"
                             id="txtReference"
                             placeholder="குறிப்பு"
+                            value={formVarans.reference}
                             onChange={handleChange}
                             />
                         </div>
@@ -2112,7 +2125,8 @@ const UpdateVaran = () => {
                             <b>Scheme</b>
                             </label>
                             <select name="ddlScheme" id="ddlScheme" className="form-input" onChange={handleChange}>
-                                <option value="normal" selected>Normal</option>
+                                <option value="normal" selected>{formVarans.scheme}</option>
+                                <option value="normal">Normal</option>
                                 <option value="premium">Premium</option>
                             </select>
                         </div>
