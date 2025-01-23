@@ -187,11 +187,15 @@ const UpdateVaran = () => {
     const [formVarans, setFormVarans] = useState({
             name: "",
             sex: "",
+            sexStr: "",
             dob: "",
             dobStr: "",
             timeOfBirth: "00",
+            timeOfBirthStr: "00",
             minOfBirth: "00",
+            minOfBirthStr: "00",
             secOfBirth: "AM",
+            secOfBirthStr: "AM",
             placeOfBirth: "",
             nativity: "",
             motherTongue: "",
@@ -200,9 +204,11 @@ const UpdateVaran = () => {
             maritialStatusStr: "",
             fatherName: "",
             fatherAlive: "",
+            fatherAliveStr: "",
             fatherJob: "",
             motherName: "",
             motherAlive: "",
+            motherAliveStr: "",
             motherJob: "",
             marriedElderBrothers: "0",
             marriedYoungerBrothers: "0",
@@ -212,18 +218,31 @@ const UpdateVaran = () => {
             unMarriedYoungerBrothers: "0",
             unMarriedElderSisters: "0",
             unMarriedYoungerSisters: "0",
+            marriedElderBrothersStr: "0",
+            marriedYoungerBrothersStr: "0",
+            marriedElderSistersStr: "0",
+            marriedYoungerSistersStr: "0",
+            unMarriedElderBrothersStr: "0",
+            unMarriedYoungerBrothersStr: "0",
+            unMarriedElderSistersStr: "0",
+            unMarriedYoungerSistersStr: "0",
             residentialType : "",
             residentialTypeStr : "",
             vehicleOwned : "",
             vehicleOwnedStr : "",
             otherDetails: "",
             height: "50",
+            heightStr:"",
             weight: "50",
+            weightStr: "",
             bloodGroup: "",
             bloodGroupStr: "",
             diet: "",
             complexion: "", 
             physicalStatus: "",
+            dietStr: "",
+            complexionStr: "", 
+            physicalStatusStr: "",
             education: "",
             educationStr: "",
             qualification: "",
@@ -231,14 +250,18 @@ const UpdateVaran = () => {
             placeOfJob: "",
             income: "1000",
             office: "",
+            officeStr: "",
             caste: "",
             casteStr: "",
             subCaste: "",
+            subCasteStr: "",
             gothram: "",
             star: "",
             starTamil: "",
+            starStr: "",
             raasi: "",
             raasiTamil: "",
+            raasiStr: "",
             laknamNo: "",
             laknam: "",
             laknamStr:"",
@@ -277,6 +300,30 @@ const UpdateVaran = () => {
             amsam10: "",
             amsam11: "",
             amsam12: "",
+            horo1Str: "",
+            horo2Str: "",
+            horo3Str: "",
+            horo4Str: "",
+            horo5Str: "",
+            horo6Str: "",
+            horo7Str: "",
+            horo8Str: "",
+            horo9Str: "",
+            horo10Str: "",
+            horo11Str: "",
+            horo12Str: "",
+            amsam1Str: "",
+            amsam2Str: "",
+            amsam3Str: "",
+            amsam4Str: "",
+            amsam5Str: "",
+            amsam6Str: "",
+            amsam7Str: "",
+            amsam8Str: "",
+            amsam9Str: "",
+            amsam10Str: "",
+            amsam11Str: "",
+            amsam12Str: "",
             expEducation: "",
             expEducationStr: "",
             expQualification: "",
@@ -286,6 +333,8 @@ const UpdateVaran = () => {
             expJobMust:"",
             preferredAgeFrom: "20",
             preferredAgeTo: "35",
+            preferredAgeFromStr: "20",
+            preferredAgeToStr: "35",
             expCaste: "",
             expCasteStr: "",
             expSubCaste: "",
@@ -297,10 +346,16 @@ const UpdateVaran = () => {
             expMartialStatus: "",
             expMartialStatusStr: "",
             scheme: "1",
+            schemeStr: "",
             amount: "1000",
+            amountStr: "1000",
+            amountPaid: "1000",
+            paidAmount: "1000",
             transactionDate: "",
             modeOfPayment: "",
+            modeOfPaymentStr: "",
             reference: "",
+            transactionReference: "",
             file1:"",
             file2:"",
             photo1:"",
@@ -311,30 +366,37 @@ const UpdateVaran = () => {
     useEffect( () => {
         axios.get("http://localhost:8089/viewVaran/"+id)
             .then(res => {
-               setFormVarans({...formVarans, name: res.data[0].name, sex: res.data[0].sex, dob: res.data[0].dob, dobString: res.data[0].dobString,
-                    timeOfBirth: res.data[0].timeOfBirth, minOfBirth: res.data[0].minOfBirth, secOfBirth: res.data[0].secOfBirth,
+               setFormVarans({...formVarans, name: res.data[0].name, sex: res.data[0].sex, sexStr: res.data[0].sexStr, dob: res.data[0].dob, dobString: res.data[0].dobString,
+                    timeOfBirth: res.data[0].timeOfBirth, minOfBirth: res.data[0].minOfBirth, secOfBirth: res.data[0].secOfBirth, timeOfBirthStr: res.data[0].timeOfBirthStr, minOfBirthStr: res.data[0].minOfBirthStr, secOfBirthStr: res.data[0].secOfBirthStr,
                     placeOfBirth: res.data[0].placeOfBirth, nativity: res.data[0].nativity, motherTongue: res.data[0].motherTongue, motherTongueStr: res.data[0].motherTongueStr,
-                    maritialStatus: res.data[0].maritialStatus, maritialStatusStr: res.data[0].maritialStatusStr, fatherName: res.data[0].fatherName, fatherAlive: res.data[0].fatherAlive,
-                    fatherJob: res.data[0].fatherJob, motherName: res.data[0].motherName, motherAlive: res.data[0].motherAlive, motherJob: res.data[0].motherJob,
+                    maritialStatus: res.data[0].maritialStatus, maritialStatusStr: res.data[0].maritialStatusStr, fatherName: res.data[0].fatherName, fatherAlive: res.data[0].fatherAlive, fatherAliveStr: res.data[0].fatherAliveStr,
+                    fatherJob: res.data[0].fatherJob, motherName: res.data[0].motherName, motherAlive: res.data[0].motherAlive, motherAliveStr: res.data[0].motherAliveStr, motherJob: res.data[0].motherJob,
                     marriedElderBrothers: res.data[0].marriedElderBrothers, marriedYoungerBrothers: res.data[0].marriedYoungerBrothers,
                     marriedElderSisters: res.data[0].marriedElderSisters, marriedYoungerSisters: res.data[0].marriedYoungerSisters, unMarriedElderBrothers: res.data[0].unMarriedElderBrothers,
                     unMarriedYoungerBrothers: res.data[0].unMarriedYoungerBrothers, unMarriedElderSisters: res.data[0].unMarriedElderSisters,
-                    unMarriedYoungerSisters: res.data[0].unMarriedYoungerSisters, residentialType: res.data[0].residentialType, residentialTypeStr: res.data[0].residentialTypeStr, vehicleOwned: res.data[0].vehicleOwned, vehicleOwnedStr: 
+                    unMarriedYoungerSisters: res.data[0].unMarriedYoungerSisters, marriedElderBrothersStr: res.data[0].marriedElderBrothersStr, marriedYoungerBrothersStr: res.data[0].marriedYoungerBrothersStr,
+                    marriedElderSistersStr: res.data[0].marriedElderSistersStr, marriedYoungerSistersStr: res.data[0].marriedYoungerSistersStr, unMarriedElderBrothersStr: res.data[0].unMarriedElderBrothersStr,
+                    unMarriedYoungerBrothersStr: res.data[0].unMarriedYoungerBrothersStr, unMarriedElderSistersStr: res.data[0].unMarriedElderSistersStr,
+                    unMarriedYoungerSistersStr: res.data[0].unMarriedYoungerSistersStr, residentialType: res.data[0].residentialType, residentialTypeStr: res.data[0].residentialTypeStr, vehicleOwned: res.data[0].vehicleOwned, vehicleOwnedStr: 
                     res.data[0].vehicleOwnedStr, otherDetails: res.data[0].otherDetails, height: res.data[0].height, weight: res.data[0].weight, bloodGroup: res.data[0].bloodGroup, bloodGroupStr: res.data[0].bloodGroupStr, diet: res.data[0].diet,
-                    complexion: res.data[0].complexion, physicalStatus: res.data[0].physicalStatus, education: res.data[0].education, educationStr: res.data[0].educationStr, qualification: res.data[0].qualification, job: res.data[0].job,
+                    complexion: res.data[0].complexion, physicalStatus: res.data[0].physicalStatus, heightStr: res.data[0].heightStr, weightStr: res.data[0].weightStr, bloodGroupStr: res.data[0].bloodGroupStr, bloodGroupStr: res.data[0].bloodGroupStr, dietStr: res.data[0].dietStr,
+                    complexionStr: res.data[0].complexionStr, physicalStatusStr: res.data[0].physicalStatusStr, education: res.data[0].education, educationStr: res.data[0].educationStr, qualification: res.data[0].qualification, job: res.data[0].job, office: res.data[0].office, officeStr: res.data[0].officeStr, 
                     placeOfJob: res.data[0].placeOfJob, income: res.data[0].income, caste: res.data[0].caste, casteStr: res.data[0].casteStr, subCaste: res.data[0].subCaste, gothram: res.data[0].gothram,
-                    star: res.data[0].star, starTamil: res.data[0].starTamil, raasi: res.data[0].raasi, raasiTamil: res.data[0].raasiTamil, laknamNo: res.data[0].laknamNo, laknam : res.data[0].laknam, laknamTamil : res.data[0].laknamTamil, laknamStr : res.data[0].laknamStr, permanentAddress: res.data[0].permanentAddress,
+                    star: res.data[0].star, starStr: res.data[0].starStr, starTamil: res.data[0].starTamil, raasiStr: res.data[0].raasiStr, raasi: res.data[0].raasi, raasiTamil: res.data[0].raasiTamil, laknamNo: res.data[0].laknamNo, laknam : res.data[0].laknam, laknamTamil : res.data[0].laknamTamil, laknamStr : res.data[0].laknamStr, permanentAddress: res.data[0].permanentAddress,
                     presentAddress : res.data[0].presentAddress , landLineNumbers: res.data[0].landLineNumbers, contactPerson : res.data[0].contactPerson , mobileNo: res.data[0].mobileNo,
                     email: res.data[0].email, dasa: res.data[0].dasa, dasaYears: res.data[0].dasaYears, dasaMonths: res.data[0].dasaMonths, dasaDays: res.data[0].dasaDays,
                     horo1: res.data[0].horo1, horo2: res.data[0].horo2, horo3: res.data[0].horo3, horo4: res.data[0].horo4, horo5: res.data[0].horo5, horo6: res.data[0].horo6, horo7: res.data[0].horo7,
                     horo8: res.data[0].horo8, horo9: res.data[0].horo9, horo10: res.data[0].horo10, horo11: res.data[0].horo11, horo12: res.data[0].horo12, amsam1: res.data[0].amsam1, amsam2: res.data[0].amsam2,
                     amsam3: res.data[0].amsam3, amsam4: res.data[0].amsam4, amsam5: res.data[0].amsam5, amsam6: res.data[0].amsam6, amsam7: res.data[0].amsam7, amsam8: res.data[0].amsam8, amsam9: res.data[0].amsam9,
-                    amsam10: res.data[0].amsam10, amsam11: res.data[0].amsam11, amsam12: res.data[0].amsam12, expEducation: res.data[0].expEducation, expEducationStr: res.data[0].expEducationStr,  expQualification: res.data[0].expQualification, expPlaceOfJob: res.data[0].expPlaceOfJob,
+                    amsam10: res.data[0].amsam10, amsam11: res.data[0].amsam11, amsam12: res.data[0].amsam12, horo1Str: res.data[0].horo1Str, horo2Str: res.data[0].horo2Str, horo3Str: res.data[0].horo3Str, horo4Str: res.data[0].horo4Str, horo5Str: res.data[0].horo5Str, horo6Str: res.data[0].horo6Str, horo7Str: res.data[0].horo7Str,
+                    horo8Str: res.data[0].horo8Str, horo9Str: res.data[0].horo9Str, horo10Str: res.data[0].horo10Str, horo11Str: res.data[0].horo11Str, horo12Str: res.data[0].horo12Str, amsam1Str: res.data[0].amsam1Str, amsam2Str: res.data[0].amsam2Str,
+                    amsam3Str: res.data[0].amsam3Str, amsam4Str: res.data[0].amsam4Str, amsam5Str: res.data[0].amsam5Str, amsam6Str: res.data[0].amsam6Str, amsam7Str: res.data[0].amsam7Str, amsam8Str: res.data[0].amsam8Str, amsam9Str: res.data[0].amsam9Str,
+                    amsam10Str: res.data[0].amsam10Str, amsam11Str: res.data[0].amsam11Str, amsam12Str: res.data[0].amsam12Str, expEducation: res.data[0].expEducation, expEducationStr: res.data[0].expEducationStr,  expQualification: res.data[0].expQualification, expPlaceOfJob: res.data[0].expPlaceOfJob,
                     expJob: res.data[0].expJob, expJobMust: res.data[0].expJobMust, expJobMustStr: res.data[0].expJobMustStr, expIncome: res.data[0].expIncome, preferredAgeFrom: res.data[0].preferredAgeFrom, preferredAgeTo: res.data[0].preferredAgeTo, expCaste: res.data[0].expCaste, expCasteStr: res.data[0].expCasteStr,
                     expSubCaste: res.data[0].expSubCaste, expMartialStatus: res.data[0].expMartialStatus, expMartialStatusStr: res.data[0].expMartialStatusStr, expDiet: res.data[0].expDiet, expDietStr: res.data[0].expDietStr, expHoroscope: res.data[0].expHoroscope, expHoroscopeStr: res.data[0].expHoroscopeStr, otherComments: res.data[0].otherComments, photo1: res.data[0].photo1, photo2: res.data[0].photo2,
-                    file1 : res.data[0].file1, file2 : res.data[0].file2, scheme: res.data[0].scheme, username: res.data[0].username, password: res.data[0].password, amount: res.data[0].amount, dobStr: res.data[0].dobStr, 
-                    transactionDate: res.data[0].transactionDate, modeOfPayment: res.data[0].modeOfPayment , transactionReference: res.data[0].transactionReference, isMarried: res.data[0].isMarried, isDeleted: res.data[0].isDeleted,
-                    createdBy: res.data[0].createdBy, createdOn: res.data[0].createdOn, updatedBy: res.data[0].updatedBy, updatedOn: res.data[0].updatedOn   
+                    file1 : res.data[0].file1, file2 : res.data[0].file2, scheme: res.data[0].scheme, schemeStr: res.data[0].schemeStr, username: res.data[0].username, password: res.data[0].password, amount: res.data[0].amount, amountPaid: res.data[0].amountPaid, paidAmount: res.data[0].paidAmount, dobStr: res.data[0].dobStr, 
+                    transactionDate: res.data[0].transactionDate, modeOfPayment: res.data[0].modeOfPayment ,modeOfPaymentStr: res.data[0].modeOfPaymentStr , transactionReference: res.data[0].transactionReference, reference: res.data[0].reference, isMarried: res.data[0].isMarried, isDeleted: res.data[0].isDeleted,
+                    createdBy: res.data[0].createdBy, createdOn: res.data[0].createdOn, updatedBy: res.data[0].updatedBy, updatedOn: res.data[0].updatedOn  , scheme: res.data[0].scheme, schemeStr: res.data[0].schemeStr   
                  });
                  console.log("formVaran1");
                  console.log(formVarans);
@@ -395,9 +457,9 @@ const UpdateVaran = () => {
                                 </label><br/>
                                 <select name="ddlSex" id="ddlSex" class="dd_NoWidth" 
                                      className="font-size-13"  onChange={handleChange}>
-                                    <option value="0-0">{formVarans.sex}</option>
-                                    <option value="male">Male - ஆண்</option>
-                                    <option value="female">Female - பெண்</option>
+                                    <option value="{formVarans.sex}-{formVarans.sexStr}">{formVarans.sexStr}</option>
+                                    <option value="1-male">Male - ஆண்</option>
+                                    <option value="2-female">Female - பெண்</option>
                                 </select>
                             </div>
                             <div className="col-3">
@@ -420,7 +482,7 @@ const UpdateVaran = () => {
                                 </label> <br/>
                                 <select name="ddlTimeOfBirth" id="ddlTimeOfBirth" class="dd_NoWidth"
                                    onChange={handleChange}>
-                                <option value="0" selected="selected">{formVarans.timeOfBirth}</option>
+                                <option value="{formVarans.timeOfBirth}-{formVarans.timeOfBirthStr}" selected="selected">{formVarans.timeOfBirthStr}</option>
                                 <option value="0">00</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -438,7 +500,7 @@ const UpdateVaran = () => {
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                         <select name="ddlMinOfBirth" id="ddlMinOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                            <option value="0" selected>{formVarans.minOfBirth}</option>
+                            <option value="{formVarans.minOfBirth}-{formVarans.minOfBirthStr}" selected>{formVarans.minOfBirthStr}</option>
                             <option value="0">00</option>
                             <option value="1">01</option>
                             <option value="2">02</option>
@@ -503,7 +565,7 @@ const UpdateVaran = () => {
                         &nbsp;&nbsp;
                         <select name="ddlSecOfBirth" id="ddlSecOfBirth" class="dd_NoWidth"
                              onChange={handleChange}>
-                        <option value="0" selected>{formVarans.secOfBirth}</option>
+                        <option value="{formVarans.secOfBirth}-{formVarans.secOfBirthStr}" selected>{formVarans.secOfBirthStr}</option>
                         <option value="AM">AM - காலை</option>
                         <option value="PM">PM - மாலை</option>
                     </select>
@@ -547,7 +609,7 @@ const UpdateVaran = () => {
                                 id="ddlMotherTongue"
                                 onChange={handleChange}
                                 >
-                                    <option value="0-0" selected="selected">{formVarans.motherTongueStr}</option>
+                                    <option value="{formVarans.motherTongue}-{formVarans.motherTongueStr}" selected="selected">{formVarans.motherTongueStr}</option>
                                     <option value="1-Tamil" >Tamil - தமிழ்</option>
                                     <option value="2-Telugu" >Telugu - தெலுங்கு</option>
                                     <option value="3-Malayalam" >Malayalam - மலையாளம்</option>
@@ -560,12 +622,12 @@ const UpdateVaran = () => {
                                 <b>Marital status </b><br/>
                                 <select name="ddlMaritialStatus" id="ddlMaritialStatus" class="dd_NoWidth" 
                                      onChange={handleChange}>
-                                    <option value="0-0" selected="selected">{formVarans.maritialStatusStr}</option>
-                                    <option value="1-Unmarried">Unmarried - திருமணம் ஆகாதவர்</option>
-                                    <option value="2-Married">Married - திருமணம் ஆணவர்</option>
-                                    <option value="3-Widow">Widow - விதவை</option>
-                                    <option value="4-Widower">Widower - விதவர்</option>
-                                    <option value="5-Divorce">Divorce - விவாகரத்தானவர்</option>
+                                    <option value="{formVarans.maritialStatus}-{formVarans.maritialStatusStr}" selected="selected">{formVarans.maritialStatusStr}</option>
+                                    <option value="1-Unmarried திருமணம் ஆகாதவர்">Unmarried - திருமணம் ஆகாதவர்</option>
+                                    <option value="2-Married திருமணம் ஆனவர்">Married - திருமணம் ஆனவர்</option>
+                                    <option value="3-Widow விதவை">Widow - விதவை</option>
+                                    <option value="4-Widower விதவர்">Widower - விதவர்</option>
+                                    <option value="5-Divorce விவாகரத்தானவர்">Divorce - விவாகரத்தானவர்</option>
                                 </select>
                             </div>
                             <div style={{backgroundColor: "DodgerBlue"}}>
@@ -590,9 +652,9 @@ const UpdateVaran = () => {
                                 <b>Father's Alive</b> <br/>
                                 <select name="ddlFatherAlive" id="ddlFatherAlive" class="dd_NoWidth" 
                                  onChange={handleChange}>
-                                    <option value="" selected="selected">{formVarans.fatherAlive}</option>
-                                    <option value="alive">Alive</option>
-                                    <option value="dead">Dead</option>
+                                    <option value="{formVarans.fatherAlive}-{formVarans.fatherAliveStr}" selected="selected">{formVarans.fatherAliveStr}</option>
+                                    <option value="1-Alive உயிருடன் உள்ளார்">Alive</option>
+                                    <option value="2-Died இறந்து விட்டார்">Died இறந்து விட்டார்</option>
                                 </select>
                             </div>
                             <div className="col-4">
@@ -631,9 +693,9 @@ const UpdateVaran = () => {
                                 <b>Mother's Alive</b> <br/>
                                 <select name="ddlMotherAlive" id="ddlMotherAlive" class="dd_NoWidth"
                                      onChange={handleChange} >
-                                    <option value="" selected="selected">{formVarans.motherAlive}</option>
-                                    <option value="alive">Alive</option>
-                                    <option value="dead">Dead</option>
+                                    <option value="{formVarans.motherAlive}-{formVarans.motherAliveStr}" selected="selected">{formVarans.motherAliveStr}</option>
+                                    <option value="1-Alive உயிருடன் உள்ளார்">Alive உயிருடன் உள்ளார்</option>
+                                    <option value="2-Died இறந்து விட்டார்">Dead இறந்து விட்டார்</option>
                                 </select>
                             </div>
                             <div className="col-4">
@@ -680,49 +742,49 @@ const UpdateVaran = () => {
                                 <td>
                                     <select name="ddlMarriedElderBrothers" id="ddlMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                         onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.marriedElderBrothers}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.marriedElderBrothers}-{formVarans.marriedElderBrothersStr}" selected>{formVarans.marriedElderBrothersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                 </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedYoungerBrothers" id="ddlMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.marriedYoungerBrothers}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.marriedYoungerBrothers}-{formVarans.marriedYoungerBrothersStr}" selected>{formVarans.marriedYoungerBrothersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                  </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedElderSisters" id="ddlMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.marriedElderSisters}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.marriedElderSisters}-{formVarans.marriedElderSistersStr}" selected>{formVarans.marriedElderSistersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlMarriedYoungerSisters" id="ddlMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                          onChange={handleChange} >
-                                        <option value="0" selected>{formVarans.marriedYoungerSisters}</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 and above</option>
+                                        <option value="{formVarans.marriedYoungerSisters}-{formVarans.marriedYoungerSistersStr}" selected>{formVarans.marriedYoungerSistersStr}</option>
+                                        <option value="0-இல்லை">இல்லை</option>
+                                        <option value="1-நபர்">1 நபர்</option>
+                                        <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                        <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                        <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                        <option value="5-நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>&nbsp;
@@ -736,49 +798,49 @@ const UpdateVaran = () => {
                                 <td >
                                     <select name="ddlUnMarriedElderBrothers" id="ddlUnMarriedElderBrothers" class="dd_NoWidth_WhiteBorder" 
                                          onChange={handleChange}>
-                                        <option value="0" selected>{formVarans.unMarriedElderBrothers}</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 and above</option>
+                                        <option value="{formVarans.unMarriedElderBrothers}-{formVarans.unMarriedElderBrothersStr}" selected>{formVarans.unMarriedElderBrothersStr}</option>
+                                        <option value="0-இல்லை">இல்லை</option>
+                                        <option value="1-நபர்">1 நபர்</option>
+                                        <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                        <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                        <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                        <option value="5-நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedYoungerBrothers" id="ddlUnMarriedYoungerBrothers" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.unMarriedYoungerBrothers}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.unMarriedYoungerBrothers}-{formVarans.unMarriedYoungerBrothersStr}" selected>{formVarans.unMarriedYoungerBrothersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedElderSisters" id="ddlUnMarriedElderSisters" class="dd_NoWidth_WhiteBorder"
                                       onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.unMarriedElderSisters}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.unMarriedElderSisters}-{formVarans.unMarriedElderSistersStr}" selected>{formVarans.unMarriedElderSistersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                 </select>
                                 </td>
                                 <td>
                                     <select name="ddlUnMarriedYoungerSisters" id="ddlUnMarriedYoungerSisters" class="dd_NoWidth_WhiteBorder"
                                        onChange={handleChange}>
-                                    <option value="0" selected>{formVarans.unMarriedYoungerSisters}</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 and above</option>
+                                    <option value="{formVarans.unMarriedYoungerSisters}-{formVarans.unMarriedYoungerSistersStr}" selected>{formVarans.unMarriedYoungerSistersStr}</option>
+                                    <option value="0-இல்லை">இல்லை</option>
+                                    <option value="1-நபர்">1 நபர்</option>
+                                    <option value="2-நபர்கள்">2 நபர்கள்</option>
+                                    <option value="3-நபர்கள்">3 நபர்கள்</option>
+                                    <option value="4-நபர்கள்">4 நபர்கள்</option>
+                                    <option value="5-நபர்கள்">5 and above</option>
                                     </select>
                                 </td>
                                 </tr>
@@ -799,7 +861,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlResidentialType" id="ddlResidentialType">
-                                            <option value="0-Not Specified">{formVarans.residentialTypeStr}</option>
+                                            <option value="{formVarans.residentialType}-{formVarans.residentialTypeStr}">{formVarans.residentialTypeStr}</option>
                                             <option value="1-Father House">Father House - தகப்பனார் வீடு</option>
                                             <option value="2-Own House">Own House - சொந்த வீடு</option>
                                             <option value="3-Rented House">Rented House - வாடகை வீடு</option>
@@ -820,7 +882,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left" valign="middle">
                                         <select name="ddlVehicleOwned" id="ddlVehicleOwned">
-                                            <option value="0-No Vehicle">{formVarans.vehicleOwnedStr}</option>
+                                            <option value="{formVarans.vehicleOwned}-{formVarans.vehicleOwnedStr}">{formVarans.vehicleOwnedStr}</option>
                                             <option value="2-2_Wheeler">2 Wheeler - இரு சக்கர வாகனம்</option>
                                             <option value="3-4_Wheeler">4 Wheeler - நான்கு சக்கர வாகனம்</option>
                                             <option value="4-2+4_Wheeler">2+4 Wheeler - இரு நான்கு சக்கர வாகனம்</option>
@@ -858,7 +920,7 @@ const UpdateVaran = () => {
                                     <td align="left">
                                     <select name="ddlHeight" id="ddlHeight" class="dd_NoWidth" style={{width: "150px"}}
                                         onChange={handleChange}>
-                                    <option value="1">{formVarans.height}</option>
+                                    <option value="{formVarans.height}-{formVarans.heightStr}">{formVarans.heightStr}</option>
                                     <option value="2">4ft - 121 cm</option>
                                     <option value="3">4ft 1in - 124cm</option>
                                     <option value="4">4ft 2in - 127cm</option>
@@ -904,7 +966,7 @@ const UpdateVaran = () => {
                                 <td align="left">
                                     <select name="ddlWeight" id="ddlWeight" class="dd_NoWidth"
                                         onChange={handleChange}>
-                                    <option value="0"> எடை - Kgs -</option>
+                                    <option value="{formVarans.weight}-{formVarans.weightStr}">{formVarans.weightStr}</option>
                                     <option value="41">41 kg</option>
                                     <option value="42">42 kg</option>
                                     <option value="43">43 kg</option>
@@ -1013,15 +1075,15 @@ const UpdateVaran = () => {
                                 <td  align="left">
                                     <select name="ddlBloodGroup" id="ddlBloodGroup" class="dd_NoWidth"
                                         onChange={handleChange}>
-                                    <option value="0-0">-{formVarans.bloodGroupStr}</option>
-                                    <option value="1-O+">O+</option>
-                                    <option value="2-A+">A+</option>
-                                    <option value="3-B+">B+</option>
-                                    <option value="4-AB+">AB+</option>
-                                    <option value="5-O-">O-</option>
-                                    <option value="6-A-">A-</option>
-                                    <option value="7-B-">B-</option>
-                                    <option value="8-AB-">AB-</option>
+                                    <option value="{formVarans.bloodGroup}-{formVarans.bloodGroupStr}">{formVarans.bloodGroupStr}</option>
+                                    <option value="1-O Positive">O+</option>
+                                    <option value="2-A Positive">A+</option>
+                                    <option value="3-B Positive">B+</option>
+                                    <option value="4-AB Positive">AB+</option>
+                                    <option value="5-O Negative">O-</option>
+                                    <option value="6-A Negative">A-</option>
+                                    <option value="7-B Negative">B-</option>
+                                    <option value="8-AB Negative">AB-</option>
                                     </select>
                                 </td>
                                 </tr>
@@ -1032,10 +1094,11 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlDiet" id="ddlDiet" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">{formVarans.diet}</option>
+                                            <option value="{formVarans.diet}-{formVarans.dietStr}" selected="selected">{formVarans.dietStr}</option>
                                             <option value="1-Vegetarian">Vegetarian</option>
                                             <option value="2-NonVegetarian">Non-Vegetarian</option>
                                             <option value="3-Eggetarian">Eggetarian</option>
+                                            <option value="4-Does Not Matter">Does Not Matter</option>
                                         </select>    
                                     </td>
                                     <td align="left">
@@ -1043,7 +1106,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td>                    
                                         <select name="ddlPhysicalStatus" id="ddlPhysicalStatus" onChange={handleChange}>
-                                            <option value="0-0" selected="selected">{formVarans.physicalStatus}</option>
+                                            <option value="{formVarans.physicalStatus}-{formVarans.physicalStatusStr}" selected="selected">{formVarans.physicalStatusStr}</option>
                                             <option value="1-Normal" checked="checked" >No-இல்லை</option>
                                             <option  value="2-PhysicallyChallenged" >Yes-ஆம்</option>    
                                             <option  value="3-EyeBlindness" >EyeBlindness -பார்வை குறை</option>       
@@ -1056,7 +1119,7 @@ const UpdateVaran = () => {
                                     </td>
                                     <td align="left">
                                         <select name="ddlComplexion" id="ddlComplexion" onChange={handleChange}>
-                                            <option value="0-0">{formVarans.complexion}</option>
+                                            <option value="{formVarans.complexion}-{formVarans.complexionStr}">{formVarans.complexionStr}</option>
                                             <option value="1-VeryFair" >Very Fair</option>
                                             <option value="2-Fair" >Fair</option>
                                             <option value="3-Wheatish" >Wheatish</option>
@@ -1086,14 +1149,14 @@ const UpdateVaran = () => {
                                             class="TextBox"
                                             onChange={handleChange}
                                             >
-                                                <option value="0-பட்டபடிப்பு">{formVarans.educationStr}</option>
-                                                <option value="1-PHD DOCTOR">PHD DOCTOR</option>
-                                                <option value="2-MASTER DEGREE">MASTER DEGREE</option>
-                                                <option value="3-BACHELOR DEGREE">BACHELOR DEGREE</option>
-                                                <option value="4-DIPLAMA">DIPLAMA</option>
-                                                <option value="5-ITI">ITI</option>
-                                                <option value="6-HSC">+2 - HSC</option>
+                                                <option value="{formVarans.education}-{formVarans.educationStr}">{formVarans.educationStr}</option>
                                                 <option value="7-SSLC">10 - SSLC</option>
+                                                <option value="6-HSC">+2 - HSC</option>
+                                                <option value="5-ITI">ITI</option>
+                                                <option value="4-DIPLAMA">DIPLAMA</option>
+                                                <option value="3-BACHELOR DEGREE">BACHELOR DEGREE</option>
+                                                <option value="2-MASTER DEGREE">MASTER DEGREE</option>
+                                                <option value="1-PHD DOCTOR">PHD DOCTOR</option>
                                             </select>
                                         </div>
                                     </td>
@@ -1179,7 +1242,7 @@ const UpdateVaran = () => {
                                             class="TextBox"
                                             onChange={handleChange}
                                             >
-                                                <option value="0-0">{formVarans.office}</option>
+                                                <option value="{formVarans.office}-{formVarans.officeStr}">{formVarans.officeStr}</option>
                                                 <option value="9-Own Business">Own Business</option>
                                                 <option value="1-MNC">MNC</option>
                                                 <option value="2-Pvt. Ltd">Pvt. Ltd</option>
@@ -1250,7 +1313,7 @@ const UpdateVaran = () => {
                                     <td>
                                     <select name="ddlStar" id="ddlStar" class="dd_NoWidth"
                                          onChange={handleChange}>
-                                        <option value="0-0">{formVarans.star}</option>
+                                        <option value="{formVarans.star}-{formVarans.starStr}">{formVarans.starStr}</option>
                                         <option value="1-அசுவினி">ASWINI-அசுவினி</option>
                                         <option value="2-பரணி">BARANI-பரணி</option>
                                         <option value="3-கிருத்திகை">KRITHIGAI-கிருத்திகை</option>
@@ -1288,7 +1351,7 @@ const UpdateVaran = () => {
                                     <td>
                                         <select name="ddlRaasiSign" id="ddlRaasiSign" class="dd_NoWidth"
                                           onChange={handleChange}>
-                                            <option value="0-0">{formVarans.raasiTamil}</option>
+                                            <option value="{formVarans.raasi}-{formVarans.raasiStr}">{formVarans.raasiStr}</option>
                                             <option value="1-மேஷம்">MESHAM-மேஷம்</option>
                                             <option value="2-ரிஷபம்">RISHABAM-ரிஷபம்</option>
                                             <option value="3-மிதுனம்">MITHUNAM-மிதுனம்</option>
@@ -1308,7 +1371,7 @@ const UpdateVaran = () => {
                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                             <tr>
                                                 <td align="right" class="Label">
-                                                    &nbsp;&nbsp;<b>Padam</b> : &nbsp;&nbsp;
+                                                    &nbsp;&nbsp;<b>Padham</b> : &nbsp;&nbsp;
                                                 </td>
                                                 <td align="left" class="Label">
                                                     <select name="ddlLaknamNo" id="ddlLaknamNo" class="dd_NoWidth"
@@ -1480,353 +1543,251 @@ const UpdateVaran = () => {
                         <div>
                         <table border="0" cellpadding="5" cellspacing="0" width="100%">
                         <tr>
-                            <td align="center">
+                            <td>
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
-                                        <td>
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <td width="100%" height="28">
+                                            <table border="0" width="90%" cellpadding="0">
                                                 <tr>
-                                                    <td width="100%" height="28">
-                                                        <table border="0" width="100%" cellpadding="0">
+                                                    <td align="center" class="Label">
+                                                        <b>Balance </b>: &nbsp;&nbsp;
+                                                        <input name="txtDasa" type="text" id="txtDasa" value={formVarans.dasa}
+                                                            onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
+                                                        <b>Dasa</b> &nbsp;&nbsp;
+                                                        <input name="txtDasaYears" type="text" id="txtDasaYears" value={formVarans.dasaYears} 
+                                                            onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
+                                                        <b>Year(s) </b>&nbsp;&nbsp;
+                                                        <input name="txtDasaMonths" type="text" id="txtDasaMonths" value={formVarans.dasaMonths} 
+                                                            onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
+                                                        <b>Month(s)</b> &nbsp;&nbsp;
+                                                        <input name="txtDasaDays" type="text" id="txtDasaDays" value={formVarans.dasaDays} 
+                                                            onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
+                                                        <b>Day(s)</b>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="90%">
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;&nbsp;</td>                                                            
+                                                    <td>&nbsp;&nbsp;</td>
+                                                    <td>&nbsp;&nbsp;</td>                                                            
+                                                    <td>&nbsp;&nbsp;</td>
+                                                    <td >
+                                                        <table border="3" cellpadding="0" cellspacing="0" width="60px">
                                                             <tr>
-                                                                <td align="center" class="Label">
-                                                                    <b>Balance </b>: &nbsp;&nbsp;
-                                                                    <input name="txtDasa" type="text" id="txtDasa" value={formVarans.dasa}
-                                                                        onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Dasa</b> &nbsp;&nbsp;
-                                                                    <input name="txtDasaYears" type="text" id="txtDasaYears" value={formVarans.dasaYears} 
-                                                                        onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Year(s) </b>&nbsp;&nbsp;
-                                                                    <input name="txtDasaMonths" type="text" id="txtDasaMonths" value={formVarans.dasaMonths} 
-                                                                        onChange={handleChange}  class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Month(s)</b> &nbsp;&nbsp;
-                                                                    <input name="txtDasaDays" type="text" id="txtDasaDays" value={formVarans.dasaDays} 
-                                                                        onChange={handleChange} class="TextBox" /> &nbsp;&nbsp;
-                                                                    <b>Day(s)</b>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td width="100px">
+                                                                                <textarea name="txtHoro12" rows="2" cols="10" id="txtHoro12" 
+                                                                                value={formVarans.horo12Str} class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro1"  id="txtHoro1"
+                                                                                    value={formVarans.horo1Str}  rows="2" cols="10"  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro2" id="txtHoro2"
+                                                                                    value={formVarans.horo2Str} rows="2" cols="10"  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro3" id="txtHoro3"
+                                                                                    value={formVarans.horo3Str}   rows="2" cols="10" class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td width="100px">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtHoro11" 
+                                                                                                value={formVarans.horo11Str} rows="2" cols="10" id="txtHoro11" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td width="100px">
+                                                                                            <textarea name="txtHoro10" 
+                                                                                                value={formVarans.horo10Str} rows="2" cols="10" id="txtHoro10" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p align="center">
+                                                                                    <b><font face="Arial" size="3" color="#008000">RASI - ராசி</font></b>
+                                                                                </p>
+                                                                            </td>
+                                                                            <td width="100px">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtHoro4"  
+                                                                                                value={formVarans.horo4Str} rows="2" cols="10" id="txtHoro4" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtHoro5" 
+                                                                                                value={formVarans.horo5Str} rows="2" cols="10" id="txtHoro5" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro9" 
+                                                                                value={formVarans.horo9Str} rows="2" cols="10" id="txtHoro9" class="TextBox_WhiteBorder" ></textarea>
+                                                                                
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro8" 
+                                                                                value={formVarans.horo8Str} rows="2" cols="10" id="txtHoro8" class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro7" 
+                                                                                    value={formVarans.horo7Str} rows="2" cols="10" id="txtHoro7" class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtHoro6"
+                                                                                    value={formVarans.horo6Str} rows="2" cols="10" id="txtHoro6" class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>&nbsp;&nbsp;
+                                                    </td>
+                                                    <td>
+                                                        <table border="3" cellpadding="0" cellspacing="0" width="60%">
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="70%">
+                                                                        <tr>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam12"id="txtAmsam12" rows="2" placeholder="12" cols="10"  
+                                                                                value={formVarans.amsam12Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px">
+                                                                                <textarea name="txtAmsam1" id="txtAmsam1" placeholder="1" rows="2" cols="10" 
+                                                                                value={formVarans.amsam1Str} onChange={handleChange} class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam2" placeholder="2" rows="2" cols="10" id="txtAmsam2" 
+                                                                                value={formVarans.amsam2Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam3" placeholder="3" rows="2" cols="10" id="txtAmsam3" 
+                                                                                value={formVarans.amsam3Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td width="100px">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtAmsam11" rows="2" cols="10" id="txtAmsam11" 
+                                                                                            value={formVarans.amsam11Str} onChange={handleChange} placeholder="11" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtAmsam10" rows="2" cols="10" id="txtAmsam10" 
+                                                                                            value={formVarans.amsam10Str} onChange={handleChange} placeholder="10" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p align="center">
+                                                                                    <b><font face="Arial" size="3" color="#008000">AMSAM - நட்சத்திரம் </font></b>
+                                                                                </p>
+                                                                            </td>
+                                                                            <td width="100px">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtAmsam4" rows="2" cols="10" id="txtAmsam4"
+                                                                                            value={formVarans.amsam4Str} onChange={handleChange} placeholder="4" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td width="100px" >
+                                                                                            <textarea name="txtAmsam5" rows="2" cols="10" id="txtAmsam5"
+                                                                                            value={formVarans.amsam5Str} onChange={handleChange} placeholder="5" class="TextBox_WhiteBorder" ></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam9" placeholder="9" rows="2" cols="10" id="txtAmsam9" 
+                                                                                value={formVarans.amsam9Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam8" placeholder="8" rows="2" cols="10" id="txtAmsam8" 
+                                                                                value={formVarans.amsam8Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam7" placeholder="7" rows="2" cols="10" id="txtAmsam7" 
+                                                                                value={formVarans.amsam7Str} onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                            <td width="100px" >
+                                                                                <textarea name="txtAmsam6" placeholder="6" rows="2" cols="10" id="txtAmsam6" 
+                                                                                    value={formVarans.amsam6Str} onChange={handleChange} 
+                                                                                    class="TextBox_WhiteBorder" ></textarea>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="90%">
-                                                            <tr>
-                                                                <td>&nbsp;</td>
-                                                            </tr>
-                                                            <tr>
-                                                            <td >
-                                                                    <table border="3" cellpadding="0" cellspacing="0" width="60px">
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px">
-                                                                                            <select name="ddlHoro12" id="ddlHoro12" class="TextBox_WhiteBorder" 
-                                                                                                 onChange={handleHoroscope12Change}><option align="center">-12-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro1" id="ddlHoro1" class="TextBox_WhiteBorder" 
-                                                                                                onChange={handleHoroscope1Change} ><option align="center">-1-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro2" id="ddlHoro2" class="TextBox_WhiteBorder" 
-                                                                                                onChange={handleHoroscope2Change}><option align="center">-2-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro3" id="ddlHoro3" class="TextBox_WhiteBorder"
-                                                                                                onChange={handleHoroscope3Change} ><option align="center">-3-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <select name="ddlHoro11" id="ddlHoro11" class="TextBox_WhiteBorder"
-                                                                                                        onChange={handleHoroscope11Change} ><option  align="center">-11-</option><Raasi/></select>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px">
-                                                                                                        <select name="ddlHoro10" id="ddlHoro10" class="TextBox_WhiteBorder"
-                                                                                                            onChange={handleHoroscope10Change}><option align="center">-10-</option><Raasi/></select>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <p align="center">
-                                                                                                <b><font face="Arial" size="3" color="#008000"><br/>RASI<br/></font></b>
-                                                                                            </p>
-                                                                                        </td>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <select name="ddlHoro4" id="ddlHoro4" class="TextBox_WhiteBorder" 
-                                                                                                            onChange={handleHoroscope4Change}><option align="center">-4-</option><Raasi/></select>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <select name="ddlHoro5" id="ddlHoro5" class="TextBox_WhiteBorder"
-                                                                                                            onChange={handleHoroscope5Change} ><option align="center">-5-</option><Raasi/></select>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro9" id="ddlHoro9" class="TextBox_WhiteBorder" 
-                                                                                                onChange={handleHoroscope9Change}><option align="center">-9-</option><Raasi/></select>
-                                                                                            
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro10" id="ddlHoro10" class="TextBox_WhiteBorder" 
-                                                                                                onChange={handleHoroscope8Change} ><option align="center">-8-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro7" id="ddlHoro7" class="TextBox_WhiteBorder"
-                                                                                                onChange={handleHoroscope7Change} ><option  align="center">-7-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <select name="ddlHoro6" id="ddlHoro6" class="TextBox_WhiteBorder" 
-                                                                                                onChange={handleHoroscope6Change}><option align="center">-6-</option><Raasi/></select>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                                <td>&nbsp;&nbsp;
-                                                                </td>
-                                                                <td >
-                                                                    <table border="3" cellpadding="0" cellspacing="0" width="60px">
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px">
-                                                                                            <textarea name="txtHoro12" rows="2" cols="10" id="txtHoro12" 
-                                                                                            value={txtHoro12} class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro1"  id="txtHoro1"
-                                                                                                value={txtHoro1}  rows="2" cols="10"  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro2" id="txtHoro2"
-                                                                                                value={txtHoro2} rows="2" cols="10"  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro3" id="txtHoro3"
-                                                                                                value={txtHoro3}   rows="2" cols="10" class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtHoro11" 
-                                                                                                            value={txtHoro11} rows="2" cols="10" id="txtHoro11" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px">
-                                                                                                        <textarea name="txtHoro10" 
-                                                                                                            value={txtHoro10} rows="2" cols="10" id="txtHoro10" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <p align="center">
-                                                                                                <b><font face="Arial" size="3" color="#008000">RASI - ராசி</font></b>
-                                                                                            </p>
-                                                                                        </td>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtHoro4"  
-                                                                                                            value={txtHoro4} rows="2" cols="10" id="txtHoro4" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtHoro5" 
-                                                                                                            value={txtHoro5} rows="2" cols="10" id="txtHoro5" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro9" 
-                                                                                            value={txtHoro9} rows="2" cols="10" id="txtHoro9" class="TextBox_WhiteBorder" ></textarea>
-                                                                                            
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro8" 
-                                                                                            value={txtHoro8} rows="2" cols="10" id="txtHoro8" class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro7" 
-                                                                                               value={txtHoro7} rows="2" cols="10" id="txtHoro7" class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtHoro6"
-                                                                                                value={txtHoro6} rows="2" cols="10" id="txtHoro6" class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                                <td>&nbsp;&nbsp;
-                                                                </td>
-                                                                <td>
-                                                                    <table border="3" cellpadding="0" cellspacing="0" width="60%">
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="70%">
-                                                                                    <tr>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam12"id="txtAmsam12" rows="2" placeholder="12" cols="10"  
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px">
-                                                                                            <textarea name="txtAmsam1" id="txtAmsam1" placeholder="1" rows="2" cols="10" 
-                                                                                            onChange={handleChange} class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam2" placeholder="2" rows="2" cols="10" id="txtAmsam2" 
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam3" placeholder="3" rows="2" cols="10" id="txtAmsam3" 
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtAmsam11" rows="2" cols="10" id="txtAmsam11" 
-                                                                                                        onChange={handleChange} placeholder="11" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtAmsam10" rows="2" cols="10" id="txtAmsam10" 
-                                                                                                        onChange={handleChange} placeholder="10" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <p align="center">
-                                                                                                <b><font face="Arial" size="3" color="#008000">AMSAM - நட்சத்திரம் </font></b>
-                                                                                            </p>
-                                                                                        </td>
-                                                                                        <td width="100px">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtAmsam4" rows="2" cols="10" id="txtAmsam4"
-                                                                                                        onChange={handleChange} placeholder="4" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td width="100px" >
-                                                                                                        <textarea name="txtAmsam5" rows="2" cols="10" id="txtAmsam5"
-                                                                                                        onChange={handleChange} placeholder="5" class="TextBox_WhiteBorder" ></textarea>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam9" placeholder="9" rows="2" cols="10" id="txtAmsam9" 
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam8" placeholder="8" rows="2" cols="10" id="txtAmsam8" 
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam7" placeholder="7" rows="2" cols="10" id="txtAmsam7" 
-                                                                                            onChange={handleChange}  class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                        <td width="100px" >
-                                                                                            <textarea name="txtAmsam6" placeholder="6" rows="2" cols="10" id="txtAmsam6" 
-                                                                                                onChange={handleChange} 
-                                                                                             class="TextBox_WhiteBorder" ></textarea>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>&nbsp;
-                                                                    
-                                                                </td>
-                                                            </tr>
-                                                        </table>
+                                                    <td>&nbsp;
+                                                        
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                 </table>
-                            </td>
+                            </td> 
                         </tr>
                     </table>
                     </div>
@@ -1894,7 +1855,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left" class="Label">
                                 <select name="ddlPreferredAgeFrom" id="ddlPreferredAgeFrom" class="dd_NoWidth" onChange={handleChange}>
-                                    <option value="0-0">{formVarans.preferredAgeFrom}</option>
+                                    <option value="{formVarans.preferredAgeFrom}-{formVarans.preferredAgeFromStr}">{formVarans.preferredAgeFromStr}</option>
                                     <option value="19">19</option>
                                     <option value="20">20</option>
                                     <option value="21">21</option>
@@ -1930,7 +1891,7 @@ const UpdateVaran = () => {
                                 </select>
                                     To
                                 <select name="ddlPreferredAgeTo" id="ddlPreferredAgeTo" class="dd_NoWidth" onChange={handleChange}>
-                                        <option value="0">{formVarans.preferredAgeTo}</option>
+                                        <option value="{formVarans.preferredAgeTo}-{formVarans.preferredAgeToStr}">{formVarans.preferredAgeToStr}</option>
                                         <option value="19">19</option>
                                         <option value="20">20</option>
                                         <option value="21">21</option>
@@ -2032,7 +1993,7 @@ const UpdateVaran = () => {
                             </td>
                             <td align="left">
                                     <select name="ddlExpSubCaste" id="ddlExpSubCaste" class="dd_NoWidth" onChange={handleChange}>
-                                    <option selected="selected" value="0">{formVarans.expSubCaste}</option>
+                                    <option selected="selected" value="{formVarans.expSubCaste}-{formVarans.expSubCasteStr}">{formVarans.expSubCasteStr}</option>
                                     <option value="1-Any">Any</option>
                                     <option value="2-Others">Others</option>
                                     </select>                                                        
@@ -2074,7 +2035,21 @@ const UpdateVaran = () => {
                             onChange={handleChange}
                             />
                         </div>
-                        
+
+                        <div className="col-2">
+                            <label htmlFor="txtPaidAmount" className="font-size-13">
+                            <b>Amount Paid</b>
+                            </label>
+                            <input
+                            type="input"
+                            className="form-input"
+                            name="txtPaidAmount"
+                            id="txtPaidAmount"
+                            value={formVarans.paidAmount}
+                            onChange={handleChange}
+                            />
+                        </div>
+
                         <div className="col-2">
                             <label htmlFor="txtTransactionDate" className="font-size-13">
                             <b>Amount Paid Date</b>
@@ -2099,7 +2074,7 @@ const UpdateVaran = () => {
                                 value={formVarans.modeOfPayment}
                                 onChange={handleChange}
                                 >
-                            <option value="0-0">{formVarans.modeOfPayment}</option>
+                            <option value="{formVarans.modeOfPayment}-{formVarans.modeOfPaymentStr}">{formVarans.modeOfPaymentStr}</option>
                             <option value="1-cash">CASH</option>
                             <option value="2-cheque">CHEQUE</option>
                             <option value="3-Google Pay">GOOGLE PAY</option>
@@ -2116,7 +2091,7 @@ const UpdateVaran = () => {
                             name="txtReference"
                             id="txtReference"
                             placeholder="குறிப்பு"
-                            value={formVarans.reference}
+                            value={formVarans.transactionReference}
                             onChange={handleChange}
                             />
                         </div>
@@ -2125,13 +2100,13 @@ const UpdateVaran = () => {
                             <b>Scheme</b>
                             </label>
                             <select name="ddlScheme" id="ddlScheme" className="form-input" onChange={handleChange}>
-                                <option value="normal" selected>{formVarans.scheme}</option>
-                                <option value="normal">Normal</option>
-                                <option value="premium">Premium</option>
+                                <option value="{formVarans.scheme}-{formVarans.schemeStr}" selected>{formVarans.schemeStr}</option>
+                                <option value="1-Normal">Normal</option>
+                                <option value="2-Premium">Premium</option>
                             </select>
                         </div>
                         </div>
-                        <div className="row">
+                        <div className="row"><div className="row"> &nbsp; </div>
                         <div className="col-12 d-flex justify-content-end">
                             <button className="btn btn-primary" type="submit">
                             {isUpdate ? "UPDATE":"SUBMIT"}
